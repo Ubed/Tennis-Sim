@@ -29,6 +29,22 @@
       "resto": 4,
       "form": 5,
       "surface": "clay"
+    },
+	{
+      "id": "omarkhanov",
+      "nombre": "Omarkhanov, Amir (KAZ)",
+      "forehand": 4,
+      "backhand": 5,
+      "volley": 3,
+      "dropshot": 4,
+      "speed": 3,
+      "stamina": 4,
+      "service": 5,
+      "power": 5,
+      "resto": 4,
+      "form": 5,
+      "surface": "clay"
+    }
     }
   ],
   "mujeres": []

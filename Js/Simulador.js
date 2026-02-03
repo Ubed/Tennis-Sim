@@ -1,3 +1,37 @@
+// Variable para almacenar el reporte
+let reportLog = "";
+
+// Función para agregar líneas al reporte
+function addToReport(message) {
+  const reportTextarea = document.getElementById("reportMessage");
+  
+  // Agregar la nueva línea con timestamp
+  const now = new Date();
+  const timeString = now.toLocaleTimeString('es-ES', { 
+    hour: '2-digit', 
+    minute: '2-digit',
+    second: '2-digit' 
+  });
+  
+  reportLog += `[${timeString}] ${message}\n`;
+  
+  // Actualizar el textarea
+  if (reportTextarea) {
+    reportTextarea.value = reportLog;
+    // Hacer scroll automático al final
+    reportTextarea.scrollTop = reportTextarea.scrollHeight;
+  }
+}
+
+// Función para limpiar el reporte
+function clearReport() {
+  reportLog = "";
+  const reportTextarea = document.getElementById("reportMessage");
+  if (reportTextarea) {
+    reportTextarea.value = "";
+  }
+}
+
 let sup = 0;
 let difi = 0;
 
@@ -158,6 +192,14 @@ function setHTML(id, html) {
   
   function arrancar()
   {
+	  // Limpiar reporte anterior
+	  clearReport();
+	  
+	  // Agregar primera línea al reporte
+	  addToReport("=== PARTIDO INICIADO ===");
+	  addToReport(`Superficie: ${surface}`);
+	  addToReport(`Formato: ${numberOfSets === "5" ? "Mejor de 5 sets" : "Mejor de 3 sets"}`);
+	  addToReport(`${nomb1} vs ${nomb2}`);
 	  surf1=document.getElementById("surface1").options[document.getElementById("surface1").selectedIndex].value;
 	  surf2=document.getElementById("surface2").options[document.getElementById("surface2").selectedIndex].value;
 	  nomb1=document.getElementById("jugador1").options[document.getElementById("jugador1").selectedIndex].text;
