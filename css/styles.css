@@ -168,7 +168,7 @@ button:hover {
   width: 100%;
   max-width: 780px;
   border-collapse: collapse;
-  background: url("./Imagenes/Res.jpg") center / cover no-repeat;
+  background: url("../Imagenes/Res.jpg") center / cover no-repeat;
 }
 
 /* === COLORES === */
@@ -251,15 +251,15 @@ button:hover {
 }
 
 .partner.sa {
-  background-image: url("./Imagenes/SA.png");
+  background-image: url("../Imagenes/SA.png");
 }
 
 .partner.coronita {
-  background-image: url("./Imagenes/Coronita.png");
+  background-image: url("../Imagenes/Coronita.png");
 }
 
 .partner.fedex {
-  background-image: url("./Imagenes/Fedex.png");
+  background-image: url("../Imagenes/Fedex.png");
 }
 
 /* === TIEMPO === */
