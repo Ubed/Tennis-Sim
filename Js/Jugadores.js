@@ -1,23 +1,96 @@
-window.onload=function(){
-	  var comboJugador1=document.getElementById("jugador1");
-	  var comboJugador2=document.getElementById("jugador2");
-	  
-	  hombres.sort(compara);
-	  mujeres.sort(compara);
-	  <!--leyendas.sort(compara);-->
-	  
-	  jugadores=new Array();
-	  jugadores=hombres.concat(mujeres);
-	  
-	  for(i in jugadores){
-		  var opcion1=new Option(jugadores[i][0],i);
-		  var opcion2=new Option(jugadores[i][0],i);
-		  comboJugador1.options[i]=opcion1;
-		  comboJugador2.options[i]=opcion2;
-	  }
+function jugadorJSONaLegacy(j) {
+  return [
+    j.nombre,
+    j.forehand,
+    j.backhand,
+    j.volley,
+    j.dropshot,
+    j.speed,
+    j.stamina,
+    j.service,
+    j.power,
+    j.resto,
+    j.form,
+    j.surface
+  ];
+}
+
+let jugadoresH = [];
+let jugadoresM = [];
+
+function cargarJugadores(callback) {
+  fetch("./jugadores.json")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("No se pudo cargar jugadores.json");
+      }
+      return response.json();
+    })
+    .then(data => {
+      jugadoresH = data.hombres.map(jugadorJSONaLegacy);
+      jugadoresM = data.mujeres.map(jugadorJSONaLegacy);
+
+      console.log("Jugadores cargados:", jugadoresH.length, jugadoresM.length);
+
+      if (callback) callback();
+    })
+    .catch(error => {
+      console.error("Error cargando jugadores:", error);
+    });
+}
+
+let jugadores = [];
+
+function inicializarCombos() {
+  const comboJugador1 = document.getElementById("jugador1");
+  const comboJugador2 = document.getElementById("jugador2");
+
+  // Unimos hombres + mujeres ya cargados
+  jugadores = jugadoresH.concat(jugadoresM);
+
+  jugadores.sort(compara);
+
+  comboJugador1.options.length = 0;
+  comboJugador2.options.length = 0;
+
+  for (let i = 0; i < jugadores.length; i++) {
+    const nombre = jugadores[i][0];
+    comboJugador1.options[i] = new Option(nombre, i);
+    comboJugador2.options[i] = new Option(nombre, i);
   }
 
+  console.log("Combos inicializados:", jugadores.length);
+}
+
+ window.onload=function(){
+	cargarJugadores(inicializarCombos);
+  } 
+
+function inicializarJugadoresLegacy() {
+  // Unimos hombres + mujeres como antes
+  jugadores = jugadoresH.concat(jugadoresM);
+
+  jugadores.sort(compara);
+
+  const comboJugador1 = document.getElementById("jugador1");
+  const comboJugador2 = document.getElementById("jugador2");
+
+  comboJugador1.innerHTML = "";
+  comboJugador2.innerHTML = "";
+
+  jugadores.forEach((j, i) => {
+    const op1 = new Option(j[0], i);
+    const op2 = new Option(j[0], i);
+    comboJugador1.add(op1);
+    comboJugador2.add(op2);
+  });
+}
+
   function cargarCaracteristicas(num){
+	  if (!jugadores.length) {
+		console.warn("Jugadores aún no cargados");
+		return;
+	  }
 	  var combo=document.getElementById("jugador" + num);
 	  var comboForehand=document.getElementById("forehand" + num);
 	  var comboBackhand=document.getElementById("backhand" + num);
@@ -51,22 +124,7 @@ window.onload=function(){
   }
 
 
-function jugadorJSONaLegacy(j) {
-  return [
-    j.nombre,
-    j.forehand,
-    j.backhand,
-    j.volley,
-    j.dropshot,
-    j.speed,
-    j.stamina,
-    j.service,
-    j.power,
-    j.resto,
-    j.form,
-    j.surface
-  ];
-}
+
 /*ESTRUCTURA DE ARRAY DE JUGADORES:
 ["Nombre jugador",derecha,reves,volea,dejada,velocidad,resistencia,servicio,fuerza,resto,forma,"superficie"]
 El valor de la superficie DEBE ser una de las siguientes posibilidades:
