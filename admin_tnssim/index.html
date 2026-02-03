@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel Admin – Tennis Sim</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .admin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #020617;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card h2 {
+      margin-top: 0;
+    }
+    .card p {
+      flex: 1;
+      color: #9ca3af;
+    }
+    .card a {
+      text-decoration: none;
+      background: #2563eb;
+      color: white;
+      padding: 0.75rem;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .card a.danger {
+      background: #dc2626;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎾 Panel de Administración – Tennis Simulator</h1>
+
+    <div class="admin-grid">
+      <div class="card">
+        <h2>➕ Añadir jugador</h2>
+        <p>Crear un nuevo jugador y añadirlo al archivo <code>jugadores.json</code>.</p>
+        <a href="admin_add.html">Añadir jugador</a>
+      </div>
+
+      <div class="card">
+        <h2>🗑️ Eliminar jugador</h2>
+        <p>Seleccionar un jugador existente y eliminarlo del JSON.</p>
+        <a href="admin_delete.html" class="danger">Eliminar jugador</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
