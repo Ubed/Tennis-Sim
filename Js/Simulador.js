@@ -209,9 +209,6 @@ function setHTML(id, html) {
 	  
 	  // Agregar primera línea al reporte
 	  addToReport("=== PARTIDO INICIADO ===");
-	  addToReport(`Superficie: ${surface}`);
-	  addToReport(`Formato: ${numberOfSets === "5" ? "Mejor de 5 sets" : "Mejor de 3 sets"}`);
-	  addToReport(`${nomb1} vs ${nomb2}`);
 	  surf1=document.getElementById("surface1").options[document.getElementById("surface1").selectedIndex].value;
 	  surf2=document.getElementById("surface2").options[document.getElementById("surface2").selectedIndex].value;
 	  nomb1=document.getElementById("jugador1").options[document.getElementById("jugador1").selectedIndex].text;
@@ -363,7 +360,7 @@ function setHTML(id, html) {
 	  tiempo = 0;
 	  
 	  surface=superficie();
-
+	  addToReport(`Superficie: ${surface}`);
 	  if(surface==surf1)
 	  {
 	  	switch(surface)
@@ -401,7 +398,9 @@ function setHTML(id, html) {
 	  }
 	  
 	  numberOfSets=numeroSets();
-
+	  addToReport(`Formato: ${numberOfSets === "5" ? "Mejor de 5 sets" : "Mejor de 3 sets"}`);
+	  addToReport(`${nomb1} vs ${nomb2}`);
+	  
 	  calcularTiempo();
 	  
 	  puntosJugados=0;
