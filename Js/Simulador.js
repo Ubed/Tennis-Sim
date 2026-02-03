@@ -1,3 +1,15 @@
+// Función auxiliar para convertir puntos numéricos a texto (15, 30, 40, etc.)
+function getPointText(point) {
+  switch(point) {
+    case 0: return "0";
+    case 1: return "15";
+    case 2: return "30";
+    case 3: return "40";
+    case 4: return "AD";
+    default: return point.toString();
+  }
+}
+
 // Variable para almacenar el reporte
 let reportLog = "";
 
