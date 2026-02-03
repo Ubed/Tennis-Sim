@@ -1,0 +1,348 @@
+/* =========================
+   RESET BÁSICO
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.hide {
+  display: none;
+}
+
+/* =========================
+   TIPOGRAFÍA
+========================= */
+h1, h2, h3 {
+  margin: 0 0 0.5rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+
+/* =========================
+   HEADER / FOOTER
+========================= */
+.app-header,
+.app-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #020617;
+}
+
+.app-footer {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* =========================
+   LAYOUT GENERAL
+========================= */
+.app-container {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .app-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #scoreboard {
+    grid-column: span 2;
+  }
+}
+
+/* =========================
+   TARJETAS
+========================= */
+.card {
+  background: #020617;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================
+   BOTONES
+========================= */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  background: #22c55e;
+  color: #022c22;
+}
+
+button:hover {
+  background: #16a34a;
+}
+
+.speed-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* =========================
+   LEGACY CLASSES (del HTML viejo)
+========================= */
+.letras {
+  color: yellow;
+}
+
+.fondo {
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+}
+
+.partners {
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 70px;
+}
+/* =========================
+   LEGACY TABLE RESPONSIVE
+========================= */
+.legacy-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.legacy-scroll table {
+  min-width: 700px;
+  border-collapse: collapse;
+}
+
+/* =========================
+   SCOREBOARD (LEGACY)
+========================= */
+.scoreboard-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#scoreboard-content {
+  width: 100%;
+}
+
+/* Ajustes específicos */
+#scoreboard table {
+  margin: 0 auto;
+}
+
+
+/* === CONTENEDOR === */
+.scoreboard-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  overflow-x: auto;
+}
+
+/* === TABLA === */
+.scoreboard-table {
+  width: 100%;
+  max-width: 780px;
+  border-collapse: collapse;
+  background: url("./Imagenes/Res.jpg") center / cover no-repeat;
+}
+
+/* === COLORES === */
+.bg-dark {
+  background-color: #151515;
+  color: #bdbdbd;
+}
+
+.bg-red {
+  background-color: #2a0a0a;
+  color: #bdbdbd;
+}
+
+.bg-light {
+  background-color: #e6e6e6;
+  color: #151515;
+}
+
+/* === TEXTO === */
+.center {
+  text-align: center;
+}
+
+.site-name {
+  font-weight: bold;
+}
+
+.label-time {
+  font-size: 1.1rem;
+}
+
+/* === JUGADORES === */
+.player-img {
+  width: 60px;
+  height: 70px;
+  background-size: cover;
+  background-position: center;
+}
+
+.player-name {
+  min-width: 220px;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+/* === SETS === */
+.set-header,
+.set-cell {
+  width: 48px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.game-header,
+.game-cell {
+  width: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* === FOOTER === */
+.slogan {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.partners-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.partner {
+  width: 60px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.partner.sa {
+  background-image: url("./Imagenes/SA.png");
+}
+
+.partner.coronita {
+  background-image: url("./Imagenes/Coronita.png");
+}
+
+.partner.fedex {
+  background-image: url("./Imagenes/Fedex.png");
+}
+
+/* === TIEMPO === */
+.time-indicator {
+  height: 40px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .player-name {
+    min-width: 160px;
+    font-size: 0.9rem;
+  }
+
+  .set-header,
+  .set-cell {
+    width: 40px;
+  }
+}
+
+.scoreboard-grid {
+  display: grid;
+  grid-template-columns:
+    60px
+    minmax(160px, 240px)
+    30px
+    repeat(5, 48px)
+    50px;
+
+  gap: 2px;
+  justify-content: center;
+  max-width: 100%;
+  margin: 2rem auto;
+}
+
+/* CELDAS */
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  font-weight: bold;
+}
+
+/* JUGADORES */
+.player-img {
+  height: 70px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* TEXTO */
+.center {
+  text-align: center;
+}
+
+.site-name {
+  grid-column: 3 / span 1;
+}
+
+/* COLORES */
+.bg-dark {
+  background-color: #151515;
+  color: #bdbdbd;
+}
+
+.bg-red {
+  background-color: #2a0a0a;
+  color: #bdbdbd;
+}
+
+.bg-light {
+  background-color: #e6e6e6;
+  color: #151515;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .scoreboard-grid {
+    grid-template-columns:
+      48px
+      1fr
+      repeat(6, 36px);
+  }
+
+  .site-name {
+    grid-column: span 2;
+  }
+}
