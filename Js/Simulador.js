@@ -25,8 +25,8 @@ function addToReport(message) {
     second: '2-digit' 
   });
   
-  reportLog += `[${timeString}] ${message}\n`;
-  
+  //reportLog += `[${timeString}] ${message}\n`;
+  reportLog += `${message}\n`;
   // Actualizar el textarea
   if (reportTextarea) {
     reportTextarea.value = reportLog;
