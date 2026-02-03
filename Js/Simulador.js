@@ -538,7 +538,7 @@ function setHTML(id, html) {
 	  tiempo = tiempo + Math.floor(Math.random()*81);
 	  if(tiempo < 60)
 	  {
-	  	document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+ "0:00" +"</center></font>";
+	  	document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+ "0h:00" +"m</center></font>";
 	  }
 	  else
 	  {
@@ -548,11 +548,11 @@ function setHTML(id, html) {
 		if(tiempo_m_sindecimal < 60)
 		{
 			if(tiempo_m_sindecimal < 10){
-				document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+ "0:0" + tiempo_m_sindecimal + "</center></font>"; 
+				document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+ "0h:0" + tiempo_m_sindecimal + "m</center></font>"; 
 			}
 			else
 			{
-				document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+ "0:" + tiempo_m_sindecimal + "</center></font>"; 
+				document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+ "0h:" + tiempo_m_sindecimal + "m</center></font>"; 
 			}
 		}
 		else
@@ -562,11 +562,11 @@ function setHTML(id, html) {
 			tiempo_m = tiempo_m_sindecimal % 60;
 			if(tiempo_m < 10)
 			{
-				document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+ tiempo_h_sindecimal + ":0" + tiempo_m + "</center></font>"; 
+				document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+ tiempo_h_sindecimal + "h:0" + tiempo_m + "m</center></font>"; 
 			}
 			else
 			{
-				document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+ tiempo_h_sindecimal + ":" + tiempo_m + "</center></font>"; 
+				document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+ tiempo_h_sindecimal + "h:" + tiempo_m + "m</center></font>"; 
 			}	
 		}
 	  }
@@ -811,7 +811,7 @@ function setHTML(id, html) {
 	  
 	  if(tiempo < 60)
 	  {
-	  	document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+"0:00"+"</center></font>";
+	  	document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+"0h:00"+"m</center></font>";
 	  }
 	  else
 	  {
@@ -821,11 +821,11 @@ function setHTML(id, html) {
 		if(tiempo_m_sindecimal < 60)
 		{
 			if(tiempo_m_sindecimal < 10){
-				document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+ "0:0" + tiempo_m_sindecimal + "</center></font>"; 
+				document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+ "0h:0" + tiempo_m_sindecimal + "m</center></font>"; 
 			}
 			else
 			{
-				document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+ "0:" + tiempo_m_sindecimal + "</center></font>"; 
+				document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+ "0h:" + tiempo_m_sindecimal + "m</center></font>"; 
 			}
 		}
 		else
@@ -835,11 +835,11 @@ function setHTML(id, html) {
 			tiempo_m = tiempo_m_sindecimal % 60;
 			if(tiempo_m < 10)
 			{
-				document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+ tiempo_h_sindecimal + ":0" + tiempo_m + "</center></font>"; 
+				document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+ tiempo_h_sindecimal + "h:0" + tiempo_m + "m</center></font>"; 
 			}
 			else
 			{
-				document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+ tiempo_h_sindecimal + ":" + tiempo_m + "</center></font>"; 
+				document.getElementById("timet").innerHTML="<font color='#FFFF00' face='OCR A Extended'><center>"+ tiempo_h_sindecimal + "h:" + tiempo_m + "m</center></font>"; 
 			}
 		}
 	  }
