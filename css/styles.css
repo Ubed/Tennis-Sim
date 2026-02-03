@@ -66,6 +66,9 @@ h2 {
   #scoreboard {
     grid-column: span 2;
   }
+  #report {
+    grid-column: span 2;
+  }
 }
 
 /* =========================
@@ -345,4 +348,9 @@ button:hover {
   .site-name {
     grid-column: span 2;
   }
+}
+
+.reportMessage{
+	min-height: 400px;
+	width: 95%;
 }

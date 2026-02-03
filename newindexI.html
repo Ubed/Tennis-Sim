@@ -2,49 +2,29 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Simulador de Tenis</title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/styles.css" />
-
-  <!-- JS legacy (se mantiene) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <title>Simulador de Tenis</title>  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css" />  <!-- JS legacy (se mantiene) -->
   <script src="Js/Jugadores.js" defer></script>
   <script src="Js/Simulador.js" defer></script>
-</head>
-
-<body class="letras">
-
-  <header class="app-header">
+</head><body class="letras">  <header class="app-header">
     <h1>Simulador de Tenis</h1>
     <p>Partidos individuales</p>
-  </header>
-
-  <main class="app-container">
-
-    <!-- ===================== -->
+  </header>  <main class="app-container">    <!-- ===================== -->
     <!-- JUGADORES -->
     <!-- ===================== -->
     <section id="players" class="card">
-      <h2>Jugadores</h2>
-
-      <!-- AQUÍ pegaremos luego la seccion de jugadores -->
+      <h2>Jugadores</h2>      <!-- AQUÍ pegaremos luego la seccion de jugadores -->
       <div id="players-content">
         <!-- SCROLL RESPONSIVE PARA LEGACY -->
     <div class="legacy-scroll">
 		<table border="0">
-<form name="jugadores"></form>
-
-<tbody><tr>
+<form name="jugadores"></form><tbody><tr>
 	<td align="right">Nombre</td>
 	<td>
 	<!--<input value="Jugador 1" name="jugador1" id="jugador1" maxlength="30" type="text">-->
     <select name="jugador1" id="jugador1" style="width: 175px;" onchange="cargarCaracteristicas('1')">
     </select>
-	</td>
-
-	<td rowspan="13" background=""><img src="./Imagenes/vs.png"></td>
+	</td>	<td rowspan="13" background=""><img src="./Imagenes/vs.png"></td>
 	<td>
     <!--<input value="Jugador 2" name="jugador2" id="jugador2" maxlength="30" type="text">-->
     <select name="jugador2" id="jugador2" style="width: 175px;" onchange="cargarCaracteristicas('2')">
@@ -53,9 +33,7 @@
 </td>
 </tr>
 <tr><td><br></td><td><br>
-</td></tr>
-
-<tr>
+</td></tr><tr>
 	<td>Derecha</td>
 	<td>
 	<select name="forehand1" id="forehand1" disabled>
@@ -70,48 +48,36 @@
 		<option value="8">8</option>
 		<option value="9">9</option>
 		<option value="10">10</option>
-	</select>
-
-	</td>
+	</select>	</td>
 	
 	<td align="right">
 	<select name="forehand2" id="forehand2" disabled> 
 		<option selected="selected" value="0">0</option>
 		<option value="1">1</option>
 		<option value="2">2</option>
-		<option value="3">3</option>
-
-		<option value="4">4</option>
+		<option value="3">3</option>		<option value="4">4</option>
 		<option value="5">5</option>
 		<option value="6">6</option>
 		<option value="7">7</option>
 		<option value="8">8</option>
-		<option value="9">9</option>
-
-		<option value="10">10</option>
+		<option value="9">9</option>		<option value="10">10</option>
 	</select>
 	</td>
 	<td>Derecha</td>
 </tr>
 <tr>
 	<td>Reves</td>
-	<td>
-
-	<select name="backhand1" id="backhand1" disabled>
+	<td>	<select name="backhand1" id="backhand1" disabled>
 		<option selected="selected" value="0">0</option>
 		<option value="1">1</option>
 		<option value="2">2</option>
 		<option value="3">3</option>
-		<option value="4">4</option>
-
-		<option value="5">5</option>
+		<option value="4">4</option>		<option value="5">5</option>
 		<option value="6">6</option>
 		<option value="7">7</option>
 		<option value="8">8</option>
 		<option value="9">9</option>
-		<option value="10">10</option>
-
-	</select>
+		<option value="10">10</option>	</select>
 	</td>
 	
 	<td align="right">
@@ -132,9 +98,7 @@
 	<td>Reves</td>
 </tr>
 <tr><td>Volea</td>
-	<td>
-
-	<select name="volley1" id="volley1" disabled>
+	<td>	<select name="volley1" id="volley1" disabled>
 		<option selected="selected" value="0">0</option>
 		<option value="1">1</option>
 		<option value="2">2</option>
@@ -145,9 +109,7 @@
 		<option value="7">7</option>
 		<option value="8">8</option>
 		<option value="9">9</option>
-		<option value="10">10</option>
-
-	</select>
+		<option value="10">10</option>	</select>
 	</td>
 	
 	<td align="right">
@@ -168,9 +130,7 @@
 	<td>Volea</td>
 </tr>
 <tr><td>Dejada</td>
-	<td>
-
-	<select name="dropshot1" id="dropshot1" disabled>
+	<td>	<select name="dropshot1" id="dropshot1" disabled>
 		<option selected="selected" value="0">0</option>
 		<option value="1">1</option>
 		<option value="2">2</option>
@@ -181,9 +141,7 @@
 		<option value="7">7</option>
 		<option value="8">8</option>
 		<option value="9">9</option>
-		<option value="10">10</option>
-
-	</select>
+		<option value="10">10</option>	</select>
 	</td>
 	
 	<td align="right">
@@ -204,9 +162,7 @@
 	<td>Dejada</td>
 </tr>
 <tr><td>Velocidad</td>
-	<td>
-
-	<select name="speed1" id="speed1" disabled>
+	<td>	<select name="speed1" id="speed1" disabled>
 		<option selected="selected" value="0">0</option>
 		<option value="1">1</option>
 		<option value="2">2</option>
@@ -217,18 +173,14 @@
 		<option value="7">7</option>
 		<option value="8">8</option>
 		<option value="9">9</option>
-		<option value="10">10</option>
-
-	</select>
+		<option value="10">10</option>	</select>
 	</td>
 	
 	<td align="right">
 	<select name="speed2" id="speed2" disabled>
 		<option selected="selected" value="0">0</option>
 		<option value="1">1</option>
-		<option value="2">2</option>
-
-		<option value="3">3</option>
+		<option value="2">2</option>		<option value="3">3</option>
 		<option value="4">4</option>
 		<option value="5">5</option>
 		<option value="6">6</option>
@@ -241,126 +193,94 @@
 	<td>Velocidad</td>
 </tr>
 <tr><td>Resistencia</td>
-	<td>
-
-	<select name="stamina1" id="stamina1" disabled>
+	<td>	<select name="stamina1" id="stamina1" disabled>
 		<option selected="selected" value="0">0</option>
 		<option value="1">1</option>
 		<option value="2">2</option>
 		<option value="3">3</option>
-		<option value="4">4</option>
-
-		<option value="5">5</option>
+		<option value="4">4</option>		<option value="5">5</option>
 		<option value="6">6</option>
 		<option value="7">7</option>
 		<option value="8">8</option>
 		<option value="9">9</option>
-		<option value="10">10</option>
-
-	</select>
+		<option value="10">10</option>	</select>
 	</td>
 	
 	<td align="right">
 	<select name="stamina2" id="stamina2" disabled>
 		<option selected="selected" value="0">0</option>
 		<option value="1">1</option>
-		<option value="2">2</option>
-
-		<option value="3">3</option>
+		<option value="2">2</option>		<option value="3">3</option>
 		<option value="4">4</option>
 		<option value="5">5</option>
 		<option value="6">6</option>
 		<option value="7">7</option>
-		<option value="8">8</option>
-
-		<option value="9">9</option>
+		<option value="8">8</option>		<option value="9">9</option>
 		<option value="10">10</option>
 	</select>
 	</td>
 	<td>Resistencia</td>
 </tr>
 <tr><td>Servicio</td>
-	<td>
-
-	<select name="service1" id="service1" disabled>
+	<td>	<select name="service1" id="service1" disabled>
 		<option selected="selected" value="0">0</option>
 		<option value="1">1</option>
 		<option value="2">2</option>
 		<option value="3">3</option>
-		<option value="4">4</option>
-
-		<option value="5">5</option>
+		<option value="4">4</option>		<option value="5">5</option>
 		<option value="6">6</option>
 		<option value="7">7</option>
 		<option value="8">8</option>
 		<option value="9">9</option>
-		<option value="10">10</option>
-
-	</select>
+		<option value="10">10</option>	</select>
 	</td>
 	
 	<td align="right">
 	<select name="service2" id="service2" disabled>
 		<option selected="selected" value="0">0</option>
 		<option value="1">1</option>
-		<option value="2">2</option>
-
-		<option value="3">3</option>
+		<option value="2">2</option>		<option value="3">3</option>
 		<option value="4">4</option>
 		<option value="5">5</option>
 		<option value="6">6</option>
 		<option value="7">7</option>
-		<option value="8">8</option>
-
-		<option value="9">9</option>
+		<option value="8">8</option>		<option value="9">9</option>
 		<option value="10">10</option>
 	</select>
 	</td>
 	<td>Servicio</td>
 </tr>
 <tr><td>Potencia</td>
-	<td>
-
-	<select name="power1" id="power1" disabled>
+	<td>	<select name="power1" id="power1" disabled>
 		<option selected="selected" value="0">0</option>
 		<option value="1">1</option>
 		<option value="2">2</option>
 		<option value="3">3</option>
-		<option value="4">4</option>
-
-		<option value="5">5</option>
+		<option value="4">4</option>		<option value="5">5</option>
 		<option value="6">6</option>
 		<option value="7">7</option>
 		<option value="8">8</option>
 		<option value="9">9</option>
-		<option value="10">10</option>
-
-	</select>
+		<option value="10">10</option>	</select>
 	</td>
 	
 	<td align="right">
 	<select name="power2" id="power2" disabled>
 		<option selected="selected" value="0">0</option>
 		<option value="1">1</option>
-		<option value="2">2</option>
-
-		<option value="3">3</option>
+		<option value="2">2</option>		<option value="3">3</option>
 		<option value="4">4</option>
 		<option value="5">5</option>
 		<option value="6">6</option>
 		<option value="7">7</option>
-		<option value="8">8</option>
-
-		<option value="9">9</option>
+		<option value="8">8</option>		<option value="9">9</option>
 		<option value="10">10</option>
 	</select>
 	</td>
 	<td>Potencia</td>
 </tr>
 <tr><td>Slice</td>
-	<td>
-
-	<select name="resto1" id="resto1" disabled>
+	<td>	<select name="resto1" id="resto1" disabled>
 		<option selected="selected" value="0">0</option>
 		<option value="1">1</option>
 		<option value="2">2</option>
@@ -390,12 +310,8 @@
 	</select>
 	</td>
 	<td>Slice</td>
-</tr>
-
-<tr><td>Consistencia</td>
-	<td>
-
-	<select name="consistencia1" id="consistencia1" disabled>
+</tr><tr><td>Consistencia</td>
+	<td>	<select name="consistencia1" id="consistencia1" disabled>
 		<option selected="selected" value="0">0</option>
 		<option value="1">1</option>
 		<option value="2">2</option>
@@ -406,11 +322,8 @@
 		<option value="7">7</option>
 		<option value="8">8</option>
 		<option value="9">9</option>
-		<option value="10">10</option>
-
-	</select>
+		<option value="10">10</option>	</select>
 	</td>
-	
 	<td align="right">
 	<select name="consistencia2" id="consistencia2" disabled>
 		<option selected="selected" value="0">0</option>
@@ -427,51 +340,34 @@
 	</select>
 	</td>
 	<td>Consistencia</td>
-</tr>
-
-<tr><td>Forma</td>
-	<td>
-
-	<select name="form1" id="form1" disabled>
+</tr><tr><td>Forma</td>
+	<td>	<select name="form1" id="form1" disabled>
 		<option selected="selected" value="0">0</option>
 		<option value="1">1</option>
 		<option value="2">2</option>
 		<option value="3">3</option>
-		<option value="4">4</option>
-
-		<option value="5">5</option>
+		<option value="4">4</option>		<option value="5">5</option>
 		<option value="6">6</option>
 		<option value="7">7</option>
 		<option value="8">8</option>
 		<option value="9">9</option>
-		<option value="10">10</option>
-
-	</select>
+		<option value="10">10</option>	</select>
 	</td>
-	
 	<td align="right">
 	<select name="form2" id="form2" disabled>
 		<option selected="selected" value="0">0</option>
 		<option value="1">1</option>
-		<option value="2">2</option>
-
-		<option value="3">3</option>
+		<option value="2">2</option>		<option value="3">3</option>
 		<option value="4">4</option>
 		<option value="5">5</option>
 		<option value="6">6</option>
 		<option value="7">7</option>
-		<option value="8">8</option>
-
-		<option value="9">9</option>
+		<option value="8">8</option>		<option value="9">9</option>
 		<option value="10">10</option>
 	</select>
 	</td>
 	<td>Forma</td>
-</tr>
-
-<tr><td>Superficie</td>
-
-	<td>
+</tr><tr><td>Superficie</td>	<td>
 	<select name="surface1" id="surface1" disabled>
             <option selected="selected" value="carpet">Indoor</option>
             <option value="clay">Tierra</option>
@@ -482,8 +378,6 @@
             <option value="hardcourt/grass">Dura/Hierba</option>
             <option value="allcourt">Neutral</option>
             </select>
-
-
 	</td>
 	<td><br>
 </td>
@@ -497,8 +391,6 @@
             <option value="clay/carpet">Tierra/Indoor</option>
             <option value="hardcourt/grass">Dura/Hierba</option>
             <option value="allcourt">Neutral</option>
-
-
 	</select>
 	</td>
 	<td>Superficie</td>
@@ -506,668 +398,162 @@
 </tbody></table>
 		</div>
       </div>
-    </section>
-
-    <!-- ===================== -->
+    </section>    <!-- ===================== -->
     <!-- TÁCTICAS -->
     <!-- ===================== -->
     <section id="tactics" class="card">
-      <h2>Tacticas</h2>
-
-      <div id="tactics-content">
+      <h2>Tacticas</h2>      <div id="tactics-content">
         <!-- legacy content --><table border="1">
-</table><table align="left" width="200">
-
-<tbody><tr>
+</table><table align="left" width="200"><tbody><tr>
 <td>Tecnica</td>
-
-
-
-
-            <td>
-            
-            
-            
-            <select id="technique1">
+            <td>            <select id="technique1">
             <option selected="selected" value="1">Colocar la pelota (Arriesgar)</option>
             <option value="0">Mantener bola en pista (Sin riesgo)</option>
-            </select>
-
-
-
-            </td>
-
-
-
-
+            </select>            </td>
           </tr>
-
-
-
-
           <tr>
-
-
-
-
             <td>Posicion</td>
-
-
-
-
-            <td>
-            
-            
-            
-            <select id="position1">
+            <td>            <select id="position1">
             <option selected="selected" value="1">Subir a la red</option>
             <option value="2">Jugar en el fondo</option>
-            </select>
-
-
-
-            </td>
-
-
-
-
+            </select>            </td>
           </tr>
-
-
-
-
-          <tr>
-
-
-
-            <td>Estrategia</td>
-
-
-
-
-            <td>
-            
-            
-            
-            <select id="strategy1">
+          <tr>            <td>Estrategia</td>
+            <td>            <select id="strategy1">
             <option selected="selected" value="1">Jugarle al drive</option>
             <option value="2">Jugarle al reves</option>
-            </select>
-
-
-
-            </td>
-
-
-
-
+            </select>            </td>
           </tr>
-
-
-
-
-
-
-          <tr>
-
-
-
-            <td>Devolucion</td>
-
-
-
-
+          <tr>            <td>Devolucion</td>
             <td>
-
-            
-            
-            
             <select id="return1">
             <option selected="selected" value="1">0%</option>
             <option value="2">25%</option>
             <option value="3">50%</option>
             <option value="4">75%</option>
             <option value="5">100%</option>
-            </select>
-
-
-
-            </td>
-
-
-
-
-          </tr>
-
-
-
-
-
-          <tr>
-
-
-
-            <td>Tiros</td>
-
-
-
-
+            </select>            </td>
+          </tr>          <tr>            <td>Tiros</td>
             <td>
-
-            
-            
-            
             <select id="shots1">
             <option selected="selected" value="1">Profundos</option>
             <option value="2">Cortos</option>
-            </select>
-
-
-
-            </td>
-
-
-
-
-          </tr>
-
-
-
-
-
-
-
-          <tr>
-
-
-
-            <td>Puntos</td>
-
-
-
-
+            </select>            </td>
+          </tr>          <tr>            <td>Puntos</td>
             <td>
-
-            
-            
-            
             <select id="points1">
             <option selected="selected" value="1">Largos</option>
             <option value="2">Rapidos</option>
-            </select>
-
-
-
-            </td>
-
-
-
-
-          </tr>
-
-
-
-
-
-          <tr>
-
-
-
-            <td>Serv.Hacia</td>
-
-
-
-
+            </select>            </td>
+          </tr>          <tr>            <td>Serv.Hacia</td>
             <td>
-
-            
-            
-            
             <select id="points1">
             <option selected="selected" value="1">El Drive</option>
             <option value="2">El Reves</option>
-            </select>
-
-
-
-            </td>
-
-
-
-
+            </select>            </td>
           </tr>
-
-
-
-
-
-
-          <tr>
-
-
-
-            <td>1er Serv.</td>
-
-
-
-
+          <tr>            <td>1er Serv.</td>
             <td>
-
-            
-            
-            
             <select id="first1">
             <option selected="selected" value="1">Arriesgar</option>
             <option value="2">Riesgo moderado</option>
             <option value="3">Asegurar</option>
-            </select>
-
-
-
-            </td>
-
-
-
-
+            </select>            </td>
           </tr>
-
-
-
-
-          <tr>
-
-
-
-            <td>2do Serv.</td>
-
-
-
-
-            <td>
-            
-            
-            
-            <select id="second1">
+          <tr>            <td>2do Serv.</td>
+            <td>            <select id="second1">
             <option selected="selected" value="1">Arriesgar</option>
             <option value="2">Riesgo moderado</option>
             <option value="3">Asegurar</option>
-            </select>
-
-
-
-            </td>
-
-
-
-
+            </select>            </td>
           </tr>
-
-
-
-
-
-        
-        
-        
         </tbody>
-      
-      
-      
       </table>
-
-
-
-
-
-
-
-
-      
-      
-      
       <table align="right" background="" width="200">
-
-
-
-
-        
-        
-        
-        <form name="tactica2"></form>
-
-
-
-
-
-        <tbody>
-
-
-
-          <tr>
-
-
-
-
-            <td align="right">
-            
-            
-            
-            <select id="technique2">
+        <form name="tactica2"></form>        <tbody>          <tr>
+            <td align="right">            <select id="technique2">
             <option selected="selected" value="1">Colocar la pelota (Arriesgar)</option>
             <option value="0">Mantener bola en pista (Sin riesgo)</option>
-            </select>
-
-
-
-            </td>
-
-
-
-
+            </select>            </td>
             <td>Tecnica</td>
-
-
-
-
           </tr>
-
-
-
-
           <tr>
-
-
-
-
-            <td align="right">
-            
-            
-            
-            <select id="position2">
+            <td align="right">            <select id="position2">
             <option selected="selected" value="1">Subir a la red</option>
             <option value="2">Jugar en el fondo</option>
-            </select>
-
-
-
-            </td>
-
-
-
-
+            </select>            </td>
             <td>Posicion</td>
-
-
-
-
-          </tr>
-
-
-
-
-
-          <tr>
-
-
-
-            <td align="right">
-            
-            
-            
-            <select id="strategy2">
+          </tr>          
+		  <tr>            <td align="right">            <select id="strategy2">
             <option selected="selected" value="1">Jugarle al drive</option>
             <option value="2">Jugarle al reves</option>
-            </select>
-
-
-
-            </td>
-
-
-
-
+            </select>            </td>
             <td>Estrategia</td>
-
-
-
-
           </tr>
-
-
-
-
-          <tr>
-
-
-
-            <td align="right">
-            
-            
-            
-            <select id="first2">
+          <tr>            <td align="right">            <select id="first2">
             <option selected="selected" value="1">0%</option>
             <option value="2">25%</option>
             <option value="3">50%</option>
             <option value="4">75%</option>
             <option value="5">100%</option>
-            </select>
-
-
-
-            </td>
-
-
-
-
+            </select>            </td>
             <td>Devolucion</td>
-
-
-
-
           </tr>
-
-
-
-
-          <tr>
-
-
-
-            <td align="right">
-            
-            
-            
-            <select id="return2">
+          <tr>            <td align="right">            <select id="return2">
             <option selected="selected" value="1">Profundos</option>
             <option value="2">Cortos</option>
-            </select>
-
-
-
-            </td>
-
-
-
-
+            </select>            </td>
             <td>Tiros</td>
-
-
-
-
           </tr>
-
-
-
-
-          <tr>
-
-
-
-            <td align="right">
-
-            
-            
-            
+          <tr>            <td align="right">
             <select id="shots2">
             <option selected="selected" value="1">Largos</option>
             <option value="2">Rapidos</option>
-            </select>
-
-
-
-            </td>
-
-
-
-
+            </select>            </td>
             <td>Puntos</td>
-
-
-
-
             <td>
             <br>
-</td>
-
-
-
-          </tr>
-
-
-
-          <tr>
-
-
-
-            <td align="right">
-
-            
-            
-            
+</td>          </tr>          <tr>            <td align="right">
             <select id="points2">
             <option selected="selected" value="1">El Drive</option>
             <option value="2">El Reves</option>
-            </select>
-
-
-
-            </td>
-
-
-
-            <td>Serv.Hacia</td>
-
-
-
-
+            </select>            </td>            <td>Serv.Hacia</td>
             <td>
             <br>
-</td>
-
-
-
-          </tr>
-
-
-
-          <tr>
-
-
-
-            <td align="right">
-
-            
-            
-            
+</td>          </tr>          <tr>            <td align="right">
             <select id="service">
             <option selected="selected" value="1">Arriesgar</option>
             <option value="2">Riesgo Moderado</option>
             <option value="3">Asegurar</option>
-            </select>
-
-
-
-            </td>
-
-
-
-            <td>1er Serv.</td>
-
-
-
-
+            </select>            </td>            <td>1er Serv.</td>
           </tr>
-
-
-
-
-          <tr>
-
-
-
-            <td align="right">
-            
-            
-            
-            <select id="second2">
+          <tr>            <td align="right">            <select id="second2">
             <option selected="selected" value="1">Arriesgar</option>
             <option value="2">Riesgo moderado</option>
             <option value="3">Asegurar</option>
-            </select>
-
-
-
-            </td>
-
-
-
-
+            </select>            </td>
             <td>2do Serv.</td>
-
-
-
-
           </tr>
-
-
-
-
-
-        
-        
-        
         </tbody>
-      
-      
-      
+
       </table>
-
-
       </div>
-    </section>
-
-    <!-- ===================== -->
+    </section>    <!-- ===================== -->
     <!-- CONFIGURACIÓN DEL PARTIDO -->
     <!-- ===================== -->
     <section id="match-settings" class="card">
-      <h2>Configuracion del partido</h2>
-
-      <div id="match-settings-content">
+      <h2>Configuracion del partido</h2>      <div id="match-settings-content">
         <!-- legacy content -->
 		<table cellspacing="20">
 <tbody><tr>
 <td align="center">
 <b><b><b><b>      
-</b></b></b></b><h3><b><b><b><b><b>Superficie del partido<b><br></b></b></b></b></b></b></h3>
-
-<form name="MatchSurface">
+</b></b></b></b><h3><b><b><b><b><b>Superficie del partido<b><br></b></b></b></b></b></b></h3><form name="MatchSurface">
 <table>
 <tbody><tr>
 <td><input name="surface" id="surface" value="carpet" type="radio">Indoor</td>
 <td><input name="surface" id="surface" value="clay" type="radio">Tierra</td>
-<td><input name="surface" id="surface" value="grass" type="radio">Hierba</td>
-
-<td><input name="surface" id="surface" value="hardcourt" type="radio">Dura</td>
+<td><input name="surface" id="surface" value="grass" type="radio">Hierba</td><td><input name="surface" id="surface" value="hardcourt" type="radio">Dura</td>
 <td><input name="surface" id="surface" value="neutral" checked="checked" type="radio">Neutral</td>
 </tr>
 <tr>
@@ -1176,9 +562,7 @@
 </td>
 <td align="center">
 <b><b><b><b>      
-</b></b></b></b><h3><b><b><b><b><b>Numero de sets del partido<b><br></b></b></b></b></b></b></h3>
-
-<form name="setsNumber">
+</b></b></b></b><h3><b><b><b><b><b>Numero de sets del partido<b><br></b></b></b></b></b></b></h3><form name="setsNumber">
 <table>
 <tbody><tr>
 <td><input name="setsNum" id="setsNum" value="3" checked="checked" type="radio">3 sets</td>
@@ -1189,12 +573,8 @@
 </form>
 </td>
 </tr>
-</tbody>
-
-</table><table border="1">
-</table><table align="left" width="200">
-
-<tbody><tr>
+</tbody></table><table border="1">
+</table><table align="left" width="200"><tbody><tr>
 <td><b> Tipo de partido</b></td>
 <td>
 <select id="mType">
@@ -1216,11 +596,7 @@
 <option value="15">WTA GS &amp; Tour</option>
 <option value="16">WTA Fed Cup</option>
 </select></td>
-
-
-<b>Arbitro del partido</b>
-
-      <select name="tipopartido" id="tipopartido">
+<b>Arbitro del partido</b>      <select name="tipopartido" id="tipopartido">
       <option selected="selected" value="0">Mohamed Layani</option>
       <option value="1">Carlos Bernardes</option>
       <option value="2">Damian Steiner</option>
@@ -1233,65 +609,40 @@
       <option value="9">Carlos Ramos</option>
       <option value="10">Kader Nouni</option>
       <option value="11">Steve Ullrich</option>
-</select>
-
-</td>
-
-</tr>
-
-<tr>
+</select></td></tr><tr>
 </tr></tbody></table>
       </div>
-    </section>
-
-    <!-- ===================== -->
+    </section>    <!-- ===================== -->
     <!-- CONTROLES -->
     <!-- ===================== -->
     <section id="controls" class="card">
       <button id="startMatch" onclick="arrancar()">
         Comenzar partido
-      </button>
-
-      <div class="speed-controls">
+      </button>      <div class="speed-controls">
         <button onclick="modificarVelocidad(1)">+ Velocidad</button>
         <button onclick="modificarVelocidad(0)">- Velocidad</button>
       </div>
-    </section>
-
-    <!-- ===================== -->
+    </section>    
+	<!-- ===================== -->
     <!-- MARCADOR -->
     <!-- ===================== -->
 	
     <section id="scoreboard" class="card">
-  <h2>Marcador</h2>
-
-  <div class="scoreboard-wrapper">
+  <h2>Marcador</h2>  <div class="scoreboard-wrapper">
     <table class="scoreboard-table">
       <tr class="scoreboard-header">
 		  <td
 			id="im_torneo"
 			class="tournament-logo"
 			rowspan="4"
-		  ></td>
-
-		  <td></td>
-
-		  <td class="center site-name">
+		  ></td>		  <td></td>		  <td class="center site-name">
 			LINK FORO
-		  </td>
-
-		  <td></td>
-
-		  <td class="set-header bg-dark">1</td>
+		  </td>		  <td></td>		  <td class="set-header bg-dark">1</td>
 		  <td class="set-header bg-red">2</td>
 		  <td class="set-header bg-dark">3</td>
 		  <td class="set-header bg-red">4</td>
-		  <td class="set-header bg-dark">5</td>
-
-		  <td id="tie" class="game-header bg-light">Juego</td>
-		</tr>
-
-      <!-- JUGADOR 1 -->
+		  <td class="set-header bg-dark">5</td>		  <td id="tie" class="game-header bg-light">Juego</td>
+		</tr>      <!-- JUGADOR 1 -->
       <tr>
         <td
           id="im_jug1"
@@ -1306,9 +657,7 @@
         <td id="set14" class="set-cell bg-red">-</td>
         <td id="set15" class="set-cell bg-dark">-</td>
         <td id="game1" class="game-cell bg-light">-</td>
-      </tr>
-
-      <!-- JUGADOR 2 -->
+      </tr>      <!-- JUGADOR 2 -->
       <tr>
         <td
           id="im_jug2"
@@ -1323,9 +672,7 @@
         <td id="set24" class="set-cell bg-red">-</td>
         <td id="set25" class="set-cell bg-dark">-</td>
         <td id="game2" class="game-cell bg-light">-</td>
-      </tr>
-
-      <!-- FOOTER -->
+      </tr>      <!-- FOOTER -->
       <tr class="scoreboard-footer">
         <td></td>
         <td id="time" class="center slogan">
@@ -1340,9 +687,7 @@
         <td colspan="6">
           <div id="timet" class="time-indicator"></div>
         </td>
-      </tr>
-
-      <tr>
+      </tr>      <tr>
         <td></td>
         <td class="center label-time">Tiempo</td>
         <td id="prev_tiempo"></td>
@@ -1350,13 +695,15 @@
     </table>
   </div>
 </section>
-
-
-  </main>
-
-  <footer class="app-footer">
+	<!-- ===================== -->
+    <!-- MARCADOR -->
+    <!-- ===================== -->
+<section id="report" class="card">
+  <h2>Reporte</h2>  <div class="scoreboard-wrapper">
+    <textarea class="reportMessage" name="reportMessage"></textarea>
+  </div>
+</section>
+  </main>  <footer class="app-footer">
     <small>Version 4.0</small>
-  </footer>
-
-</body>
+  </footer></body>
 </html>
