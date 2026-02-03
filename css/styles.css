@@ -353,4 +353,5 @@ button:hover {
 .reportMessage{
 	min-height: 400px;
 	width: 95%;
+	resize: none;
 }

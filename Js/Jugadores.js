@@ -51,7 +51,22 @@ window.onload=function(){
   }
 
 
-
+function jugadorJSONaLegacy(j) {
+  return [
+    j.nombre,
+    j.forehand,
+    j.backhand,
+    j.volley,
+    j.dropshot,
+    j.speed,
+    j.stamina,
+    j.service,
+    j.power,
+    j.resto,
+    j.form,
+    j.surface
+  ];
+}
 /*ESTRUCTURA DE ARRAY DE JUGADORES:
 ["Nombre jugador",derecha,reves,volea,dejada,velocidad,resistencia,servicio,fuerza,resto,forma,"superficie"]
 El valor de la superficie DEBE ser una de las siguientes posibilidades:

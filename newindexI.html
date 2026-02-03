@@ -9,7 +9,8 @@
 </head><body class="letras">  <header class="app-header">
     <h1>Simulador de Tenis</h1>
     <p>Partidos individuales</p>
-  </header>  <main class="app-container">    <!-- ===================== -->
+  </header>  <main class="app-container">   
+    <!-- ===================== -->
     <!-- JUGADORES -->
     <!-- ===================== -->
     <section id="players" class="card">
@@ -398,14 +399,15 @@
 </tbody></table>
 		</div>
       </div>
-    </section>    <!-- ===================== -->
+    </section>   
+	<!-- ===================== -->
     <!-- TÁCTICAS -->
     <!-- ===================== -->
     <section id="tactics" class="card">
       <h2>Tacticas</h2>      <div id="tactics-content">
-        <!-- legacy content --><table border="1">
-</table><table align="left" width="200"><tbody><tr>
-<td>Tecnica</td>
+        <!-- legacy content -->
+		<table align="left" width="200"><tbody><tr>
+			<td>Tecnica</td>
             <td>            <select id="technique1">
             <option selected="selected" value="1">Colocar la pelota (Arriesgar)</option>
             <option value="0">Mantener bola en pista (Sin riesgo)</option>
@@ -538,7 +540,8 @@
 
       </table>
       </div>
-    </section>    <!-- ===================== -->
+    </section>    
+	<!-- ===================== -->
     <!-- CONFIGURACIÓN DEL PARTIDO -->
     <!-- ===================== -->
     <section id="match-settings" class="card">
@@ -546,9 +549,8 @@
         <!-- legacy content -->
 		<table cellspacing="20">
 <tbody><tr>
-<td align="center">
-<b><b><b><b>      
-</b></b></b></b><h3><b><b><b><b><b>Superficie del partido<b><br></b></b></b></b></b></b></h3><form name="MatchSurface">
+<td align="left">
+<h3>Superficie del partido</h3><form name="MatchSurface">
 <table>
 <tbody><tr>
 <td><input name="surface" id="surface" value="carpet" type="radio">Indoor</td>
@@ -560,9 +562,8 @@
 </tr></tbody></table>
 </form>
 </td>
-<td align="center">
-<b><b><b><b>      
-</b></b></b></b><h3><b><b><b><b><b>Numero de sets del partido<b><br></b></b></b></b></b></b></h3><form name="setsNumber">
+<td align="left">
+<h3>Numero de sets del partido</h3><form name="setsNumber">
 <table>
 <tbody><tr>
 <td><input name="setsNum" id="setsNum" value="3" checked="checked" type="radio">3 sets</td>
@@ -573,30 +574,31 @@
 </form>
 </td>
 </tr>
-</tbody></table><table border="1">
-</table><table align="left" width="200"><tbody><tr>
+</tbody></table>
+<table align="left"><tbody><tr>
 <td><b> Tipo de partido</b></td>
 <td>
 <select id="mType">
-<option selected="selected" value="0">Exhibicion</option>
-<option value="1">Future</option>
-<option value="2">Challenger</option>
-<option value="3">ATP 250</option>
-<option value="4">ATP 500</option>
-<option value="5">ATP 1000</option>
-<option value="6">GS (Australian Open)</option>
-<option value="7">GS (Roland Garros)</option>
-<option value="8">GS (Wimbledon)</option>
-<option value="9">GS (US Open)</option>
-<option value="10">ATP WTFinals</option>
-<option value="11">Copa Davis</option>
-<option value="12">WTA Challenger</option>
-<option value="13">WTA International</option>
-<option value="14">WTA Premier</option>
-<option value="15">WTA GS &amp; Tour</option>
-<option value="16">WTA Fed Cup</option>
-</select></td>
-<b>Arbitro del partido</b>      <select name="tipopartido" id="tipopartido">
+	<option selected="selected" value="0">Exhibicion</option>
+	<option value="1">Future</option>
+	<option value="2">Challenger</option>
+	<option value="3">ATP 250</option>
+	<option value="4">ATP 500</option>
+	<option value="5">ATP 1000</option>
+	<option value="6">GS (Australian Open)</option>
+	<option value="7">GS (Roland Garros)</option>
+	<option value="8">GS (Wimbledon)</option>
+	<option value="9">GS (US Open)</option>
+	<option value="10">ATP WTFinals</option>
+	<option value="11">Copa Davis</option>
+	<option value="12">WTA Challenger</option>
+	<option value="13">WTA International</option>
+	<option value="14">WTA Premier</option>
+	<option value="15">WTA GS &amp; Tour</option>
+	<option value="16">WTA Fed Cup</option>
+</select></td></tr>
+<tr><td><b>Arbitro del partido</b></td><td>
+<select name="tipopartido" id="tipopartido">
       <option selected="selected" value="0">Mohamed Layani</option>
       <option value="1">Carlos Bernardes</option>
       <option value="2">Damian Steiner</option>
@@ -700,7 +702,7 @@
     <!-- ===================== -->
 <section id="report" class="card">
   <h2>Reporte</h2>  <div class="scoreboard-wrapper">
-    <textarea class="reportMessage" name="reportMessage"></textarea>
+    <textarea class="reportMessage" name="reportMessage" readonly></textarea>
   </div>
 </section>
   </main>  <footer class="app-footer">

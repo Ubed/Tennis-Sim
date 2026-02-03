@@ -1,0 +1,20 @@
+{
+  "hombres": [
+    {
+      "id": "federer",
+      "nombre": "Federer, Roger (SUI)",
+      "forehand": 9,
+      "backhand": 9,
+      "volley": 8,
+      "dropshot": 9,
+      "speed": 7,
+      "stamina": 8,
+      "service": 9,
+      "power": 10,
+      "resto": 8,
+      "form": 10,
+      "surface": "allcourt"
+    }
+  ],
+  "mujeres": []
+}

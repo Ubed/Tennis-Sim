@@ -281,7 +281,8 @@ function setHTML(id, html) {
 	  setHTML("set22", "<center>-</center>");
 	  setHTML("set23", "<center>-</center>");
 	  setHTML("set24", "<center>-</center>");
-	  setHTML("set25", "<center>-</center>");document.getElementById("res1").innerHTML="<center><b><font color='#BDBDBD' face = 'helvetica'>"+ nomb1 +"</b></center></font>";
+	  setHTML("set25", "<center>-</center>");
+	  document.getElementById("res1").innerHTML="<center><b><font color='#BDBDBD' face = 'helvetica'>"+ nomb1 +"</b></center></font>";
 	  document.getElementById("res2").innerHTML="<center><b><font color='#BDBDBD' face = 'helvetica'>"+ nomb2 +"</b></center></font>";
 		
 	  saq= Math.round(Math.random()*10)+1;
