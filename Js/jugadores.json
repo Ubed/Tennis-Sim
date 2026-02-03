@@ -3,17 +3,17 @@
     {
       "id": "dhamme",
       "nombre": "Dhamme, Manas (IND)",
-      "forehand": 9,
-      "backhand": 9,
-      "volley": 8,
-      "dropshot": 9,
-      "speed": 7,
-      "stamina": 8,
-      "service": 9,
-      "power": 10,
-      "resto": 8,
-      "form": 10,
-      "surface": "allcourt"
+      "forehand": 4,
+      "backhand": 5,
+      "volley": 3,
+      "dropshot": 4,
+      "speed": 3,
+      "stamina": 4,
+      "service": 5,
+      "power": 5,
+      "resto": 4,
+      "form": 5,
+      "surface": "hardcourt"
     }
   ],
   "mujeres": []
