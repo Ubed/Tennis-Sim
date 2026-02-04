@@ -51,6 +51,7 @@ function setHTML(id, html) {
   const el = document.getElementById(id);
   if (el) el.innerHTML = html;
 }
+
   function calcular(jug,tipo,num)
   {
 	  if(jug==1)
@@ -200,8 +201,17 @@ function setHTML(id, html) {
 		  document.getElementById("s2").innerHTML="<center>&nbsp;</center>";
 		  saq=1;
 	  }
+	  const sacador = saq === 1 ? nomb1.split(',')[0] : nomb2.split(',')[0];
+	  addToReport(`Ahora saca: ${sacador}`);
   }
   
+function finalizarPartido(ganador, perdedor, resultado) {
+  addToReport("=== PARTIDO FINALIZADO ===");
+  addToReport(`?? GANADOR: ${ganador}`);
+  addToReport(`Resultado final: ${resultado}`);
+  addToReport(`Duración: ${document.getElementById("timet").textContent}`);
+}
+
   function arrancar()
   {
 	  // Limpiar reporte anterior
@@ -563,6 +573,7 @@ function setHTML(id, html) {
 		  	{
 		  	}
 		}
+		addToReport("Comienza a llover en la pista");
 	  }
 
 	  cont++;
@@ -768,6 +779,7 @@ function setHTML(id, html) {
 		  	{
 		  	}
 		}
+		addToReport("Comienza a llover en la pista");
 	  }
 	  
 	  if((game1==game2) && (game1==6) && (set!=5))
@@ -999,6 +1011,10 @@ function setHTML(id, html) {
 				mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  			mensaje=mensaje + "Se declara como ganador a " + nomb_g;
 	  			alert(mensaje);
+				addToReport(`LESIÓN: ${cad}`);
+			    if (mensaje) {
+				  addToReport(`${mensaje.split('\n')[0]}`);
+			    }
 	  			set1=6;
 	  			mensajeExpuesto=true;
 	  			return;
@@ -1013,6 +1029,10 @@ function setHTML(id, html) {
 					cad = "un golpe en el codo";
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión ha afectado a su velocidad(-" + spe_nueva + ") y a su resistencia(-" + sta_nueva +").";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 	  				alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1033,6 +1053,10 @@ function setHTML(id, html) {
 					cad = "un golpe en el codo";
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión no ha afectado  jugador.";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 					alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1048,6 +1072,10 @@ function setHTML(id, html) {
 				cad = "una contusión en la rodilla(-" + fm + " de forma) ";
 				mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  			mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+				addToReport(`LESIÓN: ${cad}`);
+			    if (mensaje) {
+				  addToReport(`${mensaje.split('\n')[0]}`);
+			    }
 	  			alert(mensaje);
 				set1=6;
 				mensajeExpuesto=true;
@@ -1058,6 +1086,10 @@ function setHTML(id, html) {
 				cad = "una leve contusión en la rodilla";
 				mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  			mensaje=mensaje + "Esta lesión no ha afectado al jugador.";
+				addToReport(`LESIÓN: ${cad}`);
+			    if (mensaje) {
+				  addToReport(`${mensaje.split('\n')[0]}`);
+			    }
 	  			alert(mensaje);
 				lesion1=50;
 				lesion2=50;
@@ -1071,6 +1103,10 @@ function setHTML(id, html) {
 				cad = "un hematoma(-1 de forma) al haber impactado la pelota en el brazo ";
 				mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar, debido a que el fisioterapeuta ha creído que podría complicarse.\n";
 	  			mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+				addToReport(`LESIÓN: ${cad}`);
+			    if (mensaje) {
+				  addToReport(`${mensaje.split('\n')[0]}`);
+			    }
 	  			alert(mensaje);
 				set1=6;
 				mensajeExpuesto=true;
@@ -1087,6 +1123,10 @@ function setHTML(id, html) {
 					pow_nueva = Math.round(Math.random());
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión ha afectado a su velocidad(-" + spe_nueva + ") y a su resistencia(-" + sta_nueva +").";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 	  				alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1107,6 +1147,10 @@ function setHTML(id, html) {
 					cad = "un hematoma en la pierna";
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión no ha afectado al jugador.";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 					alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1121,6 +1165,10 @@ function setHTML(id, html) {
 				cad = "una contusión al caer al suelo(-1 de forma) ";
 				mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  			mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+				addToReport(`LESIÓN: ${cad}`);
+			    if (mensaje) {
+				  addToReport(`${mensaje.split('\n')[0]}`);
+			    }
 	  			alert(mensaje);
 				set1=6;
 				mensajeExpuesto=true;
@@ -1140,6 +1188,10 @@ function setHTML(id, html) {
 						back_nueva = Math.round(Math.random()*2)+1;
 						mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  					mensaje=mensaje + "Esta lesión ha afectado a su potencia(-" + pow_nueva + "), a su drive(-" + fore_nueva +") y a su revés(-" + back_nueva + ").";
+						addToReport(`LESIÓN: ${cad}`);
+						if (mensaje) {
+						  addToReport(`${mensaje.split('\n')[0]}`);
+						}
 	  					alert(mensaje);
 						lesion1=50;
 						lesion2=50;
@@ -1164,6 +1216,10 @@ function setHTML(id, html) {
 						spe_nueva = Math.round(Math.random()*2)+1;
 						mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  					mensaje=mensaje + "Esta lesión ha afectado a su velocidad(-" + spe_nueva + ") y a su resistencia(-" + sta_nueva +").";
+						addToReport(`LESIÓN: ${cad}`);
+						if (mensaje) {
+						  addToReport(`${mensaje.split('\n')[0]}`);
+						}
 	  					alert(mensaje);
 						lesion1=50;
 						lesion2=50;
@@ -1185,6 +1241,10 @@ function setHTML(id, html) {
 					cad = "una contusión al caer al suelo";
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión no ha afectado  jugador.";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 					alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1199,6 +1259,10 @@ function setHTML(id, html) {
 				cad = "una sobrecarga en el bíceps(-2 de forma) ";
 				mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  			mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+				addToReport(`LESIÓN: ${cad}`);
+			    if (mensaje) {
+				  addToReport(`${mensaje.split('\n')[0]}`);
+			    }
 	  			alert(mensaje);
 				set1=6;
 				mensajeExpuesto=true;
@@ -1215,6 +1279,10 @@ function setHTML(id, html) {
 					back_nueva = Math.round(Math.random()*2)+1;
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión ha afectado a su potencia(-" + pow_nueva + "), a su drive(-" + fore_nueva +") y a su revés(-" + back_nueva + ").";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 	  				alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1237,6 +1305,10 @@ function setHTML(id, html) {
 					cad = "una sobrecarga leve en el bíceps";
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión no ha afectado  jugador.";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 					alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1251,6 +1323,10 @@ function setHTML(id, html) {
 				cad = "una sobrecarga en el gemelo(-2 de forma) ";
 				mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  			mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+				addToReport(`LESIÓN: ${cad}`);
+			    if (mensaje) {
+				  addToReport(`${mensaje.split('\n')[0]}`);
+			    }
 	  			alert(mensaje);
 				set1=6;
 				mensajeExpuesto=true;
@@ -1266,6 +1342,10 @@ function setHTML(id, html) {
 					sta_nueva = Math.round(Math.random()*2)+1;
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión ha afectado a su velocidad(-" + spe_nueva + ") y a su resistencia(-" + sta_nueva +").";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 	  				alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1286,6 +1366,10 @@ function setHTML(id, html) {
 					cad = "una sobrecarga leve en el bíceps";
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión no ha afectado  jugador.";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 					alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1300,6 +1384,10 @@ function setHTML(id, html) {
 				cad = "una contractura en el tríceps(-2 de forma) ";
 				mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  			mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+				addToReport(`LESIÓN: ${cad}`);
+			    if (mensaje) {
+				  addToReport(`${mensaje.split('\n')[0]}`);
+			    }
 	  			alert(mensaje);
 				set1=6;
 				mensajeExpuesto=true;
@@ -1315,6 +1403,10 @@ function setHTML(id, html) {
 					sta_nueva = Math.round(Math.random()*2)+1;
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión ha afectado a su velocidad(-" + spe_nueva + ") y a su resistencia(-" + sta_nueva +").";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 	  				alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1335,6 +1427,10 @@ function setHTML(id, html) {
 					cad = "una contractura en el tríceps";
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión no ha afectado  jugador.";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 					alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1349,6 +1445,10 @@ function setHTML(id, html) {
 				cad = "un esguince grave de tobillo(-4 de forma) ";
 				mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  			mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+				addToReport(`LESIÓN: ${cad}`);
+			    if (mensaje) {
+				  addToReport(`${mensaje.split('\n')[0]}`);
+			    }
 	  			alert(mensaje);
 				set1=6;
 				mensajeExpuesto=true;
@@ -1366,6 +1466,10 @@ function setHTML(id, html) {
 						spe_nueva = Math.round(Math.random()*2)+1;
 						mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  					mensaje=mensaje + "Esta lesión ha afectado a su velocidad(-" + spe_nueva + ").";
+						addToReport(`LESIÓN: ${cad}`);
+						if (mensaje) {
+						  addToReport(`${mensaje.split('\n')[0]}`);
+						}
 	  					alert(mensaje);
 					}
 					if(opc2 > 81 && opc2 < 96)
@@ -1374,6 +1478,10 @@ function setHTML(id, html) {
 						spe_nueva = Math.round(Math.random()*3)+1;
 						mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  					mensaje=mensaje + "Esta lesión ha afectado a su velocidad(-" + spe_nueva + ").";
+						addToReport(`LESIÓN: ${cad}`);
+						if (mensaje) {
+						  addToReport(`${mensaje.split('\n')[0]}`);
+						}
 	  					alert(mensaje);
 					}
 					if(opc2 > 95)
@@ -1382,6 +1490,10 @@ function setHTML(id, html) {
 						spe_nueva = Math.round(Math.random()*4)+2;
 						mensaje="El jugador " + nomb_p + " ha sufrido " + cad + " y, aunque bastante mermado, puede continuar.\n";
 	  					mensaje=mensaje + "Esta lesión ha afectado a su velocidad(-" + spe_nueva + ").";
+						addToReport(`LESIÓN: ${cad}`);
+						if (mensaje) {
+						  addToReport(`${mensaje.split('\n')[0]}`);
+						}
 	  					alert(mensaje);
 					}
 					lesion1=50;
@@ -1401,6 +1513,10 @@ function setHTML(id, html) {
 					cad = "un esguince leve de tobillo";
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión no ha afectado  jugador.";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 					alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1415,6 +1531,10 @@ function setHTML(id, html) {
 				cad = "un esguince grave de muñeca(-4 de forma) ";
 				mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  			mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+				addToReport(`LESIÓN: ${cad}`);
+			    if (mensaje) {
+				  addToReport(`${mensaje.split('\n')[0]}`);
+			    }
 	  			alert(mensaje);
 				set1=6;
 				mensajeExpuesto=true;
@@ -1433,6 +1553,10 @@ function setHTML(id, html) {
 						back_nueva = Math.round(Math.random()*2)+1;
 						mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  					mensaje=mensaje + "Esta lesión ha afectado a su drive(-" + fore_nueva + ") y a su revés(-" + back_nueva + ").";
+						addToReport(`LESIÓN: ${cad}`);
+						if (mensaje) {
+						  addToReport(`${mensaje.split('\n')[0]}`);
+						}
 	  					alert(mensaje);
 						if(nomb_p == nomb1)
 						{
@@ -1453,6 +1577,10 @@ function setHTML(id, html) {
 						ser_nueva = Math.round(Math.random()*2)+1;
 						mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  					mensaje=mensaje + "Esta lesión ha afectado a su drive(-" + fore_nueva + "), a su revés(-" + back_nueva + ") y a su servicio(-" + ser_nueva + ").";
+						addToReport(`LESIÓN: ${cad}`);
+						if (mensaje) {
+						  addToReport(`${mensaje.split('\n')[0]}`);
+						}
 	  					alert(mensaje);
 						if(nomb_p == nomb1)
 						{
@@ -1477,6 +1605,10 @@ function setHTML(id, html) {
 						ser_nueva = Math.round(Math.random()*3)+1;
 						mensaje="El jugador " + nomb_p + " ha sufrido " + cad + " y, aunque bastante mermado, puede continuar.\n";
 	  					mensaje=mensaje + "Esta lesión ha afectado a su drive(-" + fore_nueva + "), a su revés(-" + back_nueva + "), a su servicio(-" + ser_nueva + "), a su volea(-" + vol_nueva + ") y a su dejada(-" + drop_nueva + ").";
+						addToReport(`LESIÓN: ${cad}`);
+						if (mensaje) {
+						  addToReport(`${mensaje.split('\n')[0]}`);
+						}
 	  					alert(mensaje);
 						if(nomb_p == nomb1)
 						{
@@ -1504,6 +1636,10 @@ function setHTML(id, html) {
 					cad = "un esguince leve de muñeca";
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión no ha afectado  jugador.";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 					alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1518,6 +1654,10 @@ function setHTML(id, html) {
 				cad = "un esguince grave del ligamento lateral interno(-4 de forma) ";
 				mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  			mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+				addToReport(`LESIÓN: ${cad}`);
+			    if (mensaje) {
+				  addToReport(`${mensaje.split('\n')[0]}`);
+			    }
 	  			alert(mensaje);
 				set1=6;
 				mensajeExpuesto=true;
@@ -1536,6 +1676,10 @@ function setHTML(id, html) {
 						rest_nueva = Math.round(Math.random()*2)+1;
 						mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  					mensaje=mensaje + "Esta lesión ha afectado a su velocidad(-" + spe_nueva + ") y a su resto(-" + rest_nueva + ").";
+						addToReport(`LESIÓN: ${cad}`);
+						if (mensaje) {
+						  addToReport(`${mensaje.split('\n')[0]}`);
+						}
 	  					alert(mensaje);
 						if(nomb_p == nomb1)
 						{
@@ -1556,6 +1700,10 @@ function setHTML(id, html) {
 						sta_nueva = Math.round(Math.random()*2)+1;
 						mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  					mensaje=mensaje + "Esta lesión ha afectado a su velocidad(-" + spe_nueva + "), a su resto(-" + rest_nueva + ") y a su resistencia(-" + sta_nueva + ").";
+						addToReport(`LESIÓN: ${cad}`);
+						if (mensaje) {
+						  addToReport(`${mensaje.split('\n')[0]}`);
+						}
 	  					alert(mensaje);
 						if(nomb_p == nomb1)
 						{
@@ -1579,6 +1727,10 @@ function setHTML(id, html) {
 						pow_nueva = Math.round(Math.random()*2)+1;
 						mensaje="El jugador " + nomb_p + " ha sufrido " + cad + " y, aunque bastante mermado, puede continuar.\n";
 	  					mensaje=mensaje + "Esta lesión ha afectado a su velocidad(-" + spe_nueva + "), a su resto(-" + rest_nueva + "), a su resistencia(-" + sta_nueva + ") y a su potencia(-" + pow_nueva + ").";
+						addToReport(`LESIÓN: ${cad}`);
+						if (mensaje) {
+						  addToReport(`${mensaje.split('\n')[0]}`);
+						}
 	  					alert(mensaje);
 						if(nomb_p == nomb1)
 						{
@@ -1604,6 +1756,10 @@ function setHTML(id, html) {
 					cad = "un esguince leve del ligamento lateral interno";
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión no ha afectado  jugador.";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 					alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1618,6 +1774,10 @@ function setHTML(id, html) {
 				cad = "un tirón en el bíceps(-2 de forma) ";
 				mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  			mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+				addToReport(`LESIÓN: ${cad}`);
+			    if (mensaje) {
+				  addToReport(`${mensaje.split('\n')[0]}`);
+			    }
 	  			alert(mensaje);
 				set1=6;
 				mensajeExpuesto=true;
@@ -1633,6 +1793,10 @@ function setHTML(id, html) {
 					rest_nueva = Math.round(Math.random()*2)+1;
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión ha afectado a su servicio(-" + ser_nueva + ") y a su resto(-" + rest_nueva +").";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 	  				alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1653,6 +1817,10 @@ function setHTML(id, html) {
 					cad = "un tirón leve en el bíceps";
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión no ha afectado  jugador.";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 					alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1667,6 +1835,10 @@ function setHTML(id, html) {
 				cad = "una subluxación de muñeca(-2 de forma) ";
 				mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  			mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+				addToReport(`LESIÓN: ${cad}`);
+			    if (mensaje) {
+				  addToReport(`${mensaje.split('\n')[0]}`);
+			    }
 	  			alert(mensaje);
 				set1=6;
 				mensajeExpuesto=true;
@@ -1682,6 +1854,10 @@ function setHTML(id, html) {
 					drop_nueva = Math.round(Math.random()*2)+1;
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión ha afectado a su servicio(-" + ser_nueva + ") y a su dejada(-" + drop_nueva +").";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 	  				alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1702,6 +1878,10 @@ function setHTML(id, html) {
 					cad = "una subluxación leve de muñeca";
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión no ha afectado  jugador.";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 					alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1716,6 +1896,10 @@ function setHTML(id, html) {
 				cad = "una lumbalgia(-3 de forma) ";
 				mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  			mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+				addToReport(`LESIÓN: ${cad}`);
+			    if (mensaje) {
+				  addToReport(`${mensaje.split('\n')[0]}`);
+			    }
 	  			alert(mensaje);
 				set1=6;
 				mensajeExpuesto=true;
@@ -1732,6 +1916,10 @@ function setHTML(id, html) {
 					back_nueva = Math.round(Math.random()*2)+1;
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión ha afectado a su resistencia(-" + sta_nueva + "), a su drive(-" + fore_nueva +") y a su revés(-" + back_nueva + ").";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 	  				alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1754,6 +1942,10 @@ function setHTML(id, html) {
 					cad = "una pequeña lumbalgia";
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión no ha afectado  jugador.";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 					alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1768,6 +1960,10 @@ function setHTML(id, html) {
 				cad = "una luxación grave de la rótula(-3 de forma) ";
 				mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  			mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+				addToReport(`LESIÓN: ${cad}`);
+			    if (mensaje) {
+				  addToReport(`${mensaje.split('\n')[0]}`);
+			    }
 	  			alert(mensaje);
 				set1=6;
 				mensajeExpuesto=true;
@@ -1782,6 +1978,10 @@ function setHTML(id, html) {
 					spe_nueva = Math.round(Math.random()*3)+1;
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión ha afectado a su velocidad(-" + spe_nueva + ").";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 	  				alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1800,6 +2000,10 @@ function setHTML(id, html) {
 					cad = "una luxación muy leve de la rótula";
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión no ha afectado  jugador.";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 					alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1814,6 +2018,10 @@ function setHTML(id, html) {
 				cad = "una luxación grave de hombro(-3 de forma) ";
 				mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  			mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+				addToReport(`LESIÓN: ${cad}`);
+			    if (mensaje) {
+				  addToReport(`${mensaje.split('\n')[0]}`);
+			    }
 	  			alert(mensaje);
 				set1=6;
 				mensajeExpuesto=true;
@@ -1831,6 +2039,10 @@ function setHTML(id, html) {
 					drop_nueva = Math.round(Math.random()*3)+1;
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión ha afectado a su drive(-" + fore_nueva + "), a su revés(-" + back_nueva + "), a su volea(-" + vol_nueva + ") y a su dejada(-" + drop_nueva + ").";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 	  				alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1855,6 +2067,10 @@ function setHTML(id, html) {
 					cad = "una luxación muy leve de hombro";
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión no ha afectado  jugador.";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 					alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1869,6 +2085,10 @@ function setHTML(id, html) {
 				cad = "un latigazo cervical(-3 de forma) ";
 				mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  			mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+				addToReport(`LESIÓN: ${cad}`);
+			    if (mensaje) {
+				  addToReport(`${mensaje.split('\n')[0]}`);
+			    }
 	  			alert(mensaje);
 				set1=6;
 				mensajeExpuesto=true;
@@ -1885,6 +2105,10 @@ function setHTML(id, html) {
 					rest_nueva = Math.round(Math.random()*2)+1;
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión ha afectado a su drive(-" + fore_nueva + "), a su revés(-" + back_nueva + ") y a su resto(-" + rest_nueva + ").";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 	  				alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1907,6 +2131,10 @@ function setHTML(id, html) {
 					cad = "un latigazo cervical muy leve";
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión no ha afectado  jugador.";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 					alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1921,6 +2149,10 @@ function setHTML(id, html) {
 				cad = "una distensión del recto anterior(-3 de forma) ";
 				mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  			mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+				addToReport(`LESIÓN: ${cad}`);
+			    if (mensaje) {
+				  addToReport(`${mensaje.split('\n')[0]}`);
+			    }
 	  			alert(mensaje);
 				set1=6;
 				mensajeExpuesto=true;
@@ -1938,6 +2170,10 @@ function setHTML(id, html) {
 					vol_nueva = Math.round(Math.random()*2)+1;
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión ha afectado a su drive(-" + fore_nueva + "), a su revés(-" + back_nueva + "), a su resto(-" + rest_nueva + ") y a su volea(-" + vol_nueva + ").";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 	  				alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1962,6 +2198,10 @@ function setHTML(id, html) {
 					cad = "una distensión muy leve del recto anterior";
 					mensaje="El jugador " + nomb_p + " ha sufrido " + cad + ", pero puede continuar.\n";
 	  				mensaje=mensaje + "Esta lesión no ha afectado  jugador.";
+					addToReport(`LESIÓN: ${cad}`);
+					if (mensaje) {
+					  addToReport(`${mensaje.split('\n')[0]}`);
+					}
 					alert(mensaje);
 					lesion1=50;
 					lesion2=50;
@@ -1973,6 +2213,10 @@ function setHTML(id, html) {
 			cad = "una tendinitis(-4 de forma) ";
 			mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  		mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+			addToReport(`LESIÓN: ${cad}`);
+			if (mensaje) {
+			  addToReport(`${mensaje.split('\n')[0]}`);
+			}
 	  		alert(mensaje);
 			set1=6;
 			mensajeExpuesto=true;
@@ -1982,6 +2226,10 @@ function setHTML(id, html) {
 			cad = "una rotura fibrilar de grado 1 en el trapecio(-4 de forma) ";
 			mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  		mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+			addToReport(`LESIÓN: ${cad}`);
+			if (mensaje) {
+			  addToReport(`${mensaje.split('\n')[0]}`);
+			}
 	  		alert(mensaje);
 			set1=6;
 			mensajeExpuesto=true;
@@ -1991,6 +2239,10 @@ function setHTML(id, html) {
 			cad = "una microrrotura en el cuádriceps(-4 de forma) ";
 			mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  		mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+			addToReport(`LESIÓN: ${cad}`);
+			if (mensaje) {
+			  addToReport(`${mensaje.split('\n')[0]}`);
+			}
 	  		alert(mensaje);
 			set1=6;
 			mensajeExpuesto=true;
@@ -2000,6 +2252,10 @@ function setHTML(id, html) {
 			cad = "una pubalgia(-5 de forma) ";
 			mensaje="El jugador " + nomb_p + " ha sufrido " + cad + "y no puede continuar.\n";
 	  		mensaje=mensaje + "Se declara como ganador a " + nomb_g;
+			addToReport(`LESIÓN: ${cad}`);
+			if (mensaje) {
+			  addToReport(`${mensaje.split('\n')[0]}`);
+			}
 	  		alert(mensaje);
 			set1=6;
 			mensajeExpuesto=true;
