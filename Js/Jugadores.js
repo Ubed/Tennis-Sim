@@ -19,7 +19,7 @@ let jugadoresH = [];
 let jugadoresM = [];
 
 function cargarJugadores(callback) {
-  fetch("../jugadores.json")
+  fetch("./jugadores.json")
     .then(response => {
       if (!response.ok) {
         throw new Error("No se pudo cargar jugadores.json");
