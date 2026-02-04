@@ -116,18 +116,18 @@ function inicializarJugadoresLegacy() {
 	  
 	  // También mostrar qué valor tendría cada campo (incluso si no existen)
 	  console.log("\nValores que se intentarán asignar:");
-	  console.log("Posición 1 (forehand):", jugadorData[1]);
-	  console.log("Posición 2 (backhand):", jugadorData[2]);
-	  console.log("Posición 3 (volley):", jugadorData[3]);
-	  console.log("Posición 4 (dropshot):", jugadorData[4]);
-	  console.log("Posición 5 (speed):", jugadorData[5]);
-	  console.log("Posición 6 (stamina):", jugadorData[6]);
-	  console.log("Posición 7 (service):", jugadorData[7]);
-	  console.log("Posición 8 (power):", jugadorData[8]);
-	  console.log("Posición 9 (resto):", jugadorData[9]);
-	  console.log("Posición 10 (consistencia):", jugadorData[10]);
-	  console.log("Posición 11 (form):", jugadorData[11]);
-	  console.log("Posición 12 (surface):", jugadorData[12]);
+	  console.log("Posición 1 (forehand):", jugadorData[2]);
+	  console.log("Posición 2 (backhand):", jugadorData[3]);
+	  console.log("Posición 3 (volley):", jugadorData[4]);
+	  console.log("Posición 4 (dropshot):", jugadorData[5]);
+	  console.log("Posición 5 (speed):", jugadorData[6]);
+	  console.log("Posición 6 (stamina):", jugadorData[7]);
+	  console.log("Posición 7 (service):", jugadorData[8]);
+	  console.log("Posición 8 (power):", jugadorData[9]);
+	  console.log("Posición 9 (resto):", jugadorData[10]);
+	  console.log("Posición 10 (consistencia):", jugadorData[11]);
+	  console.log("Posición 11 (form):", jugadorData[12]);
+	  console.log("Posición 12 (surface):", jugadorData[13]);
 	  console.log("=== FIN DEPURACIÓN ===\n");
   
 	  var comboForehand=document.getElementById("forehand" + num);
@@ -143,18 +143,18 @@ function inicializarJugadoresLegacy() {
 	  var comboForm=document.getElementById("form" + num);
 	  var comboSurface=document.getElementById("surface" + num);
 	  
-	  comboForehand.value=jugadores[combo.value][1];
-	  comboBackhand.value=jugadores[combo.value][2];
-	  comboVolley.value=jugadores[combo.value][3];
-	  comboDropshot.value=jugadores[combo.value][4];
-	  comboSpeed.value=jugadores[combo.value][5];
-	  comboStamina.value=jugadores[combo.value][6];
-	  comboService.value=jugadores[combo.value][7];
-	  comboPower.value=jugadores[combo.value][8];
-	  comboResto.value=jugadores[combo.value][9];
-	  comboConsi.value=jugadores[combo.value][10];
-	  comboForm.value=jugadores[combo.value][11];
-	  comboSurface.value=jugadores[combo.value][12];
+	  comboForehand.value=jugadores[combo.value][2];
+	  comboBackhand.value=jugadores[combo.value][3];
+	  comboVolley.value=jugadores[combo.value][4];
+	  comboDropshot.value=jugadores[combo.value][5];
+	  comboSpeed.value=jugadores[combo.value][6];
+	  comboStamina.value=jugadores[combo.value][7];
+	  comboService.value=jugadores[combo.value][8];
+	  comboPower.value=jugadores[combo.value][9];
+	  comboResto.value=jugadores[combo.value][10];
+	  comboConsi.value=jugadores[combo.value][11];
+	  comboForm.value=jugadores[combo.value][12];
+	  comboSurface.value=jugadores[combo.value][13];
 	  // También mostrar qué se asignó realmente a cada campo
 	  console.log("Valores asignados a los campos:");
 	  console.log("forehand" + num + ":", comboForehand.value);
