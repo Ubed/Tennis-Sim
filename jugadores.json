@@ -14,6 +14,21 @@
       "resto": 4,
       "form": 5,
       "surface": "hardcourt"
+    },
+    {
+      "id": "tabataryojap",
+      "nombre": "Tabata, Ryo (JAP)",
+      "forehand": 3,
+      "backhand": 3,
+      "volley": 3,
+      "dropshot": 3,
+      "speed": 3,
+      "stamina": 3,
+      "service": 3,
+      "power": 3,
+      "resto": 3,
+      "form": 3,
+      "surface": "hardcourt"
     }
   ],
   "mujeres": []
