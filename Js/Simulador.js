@@ -212,7 +212,7 @@ function finalizarPartido(ganador, perdedor, resultado) {
   addToReport(`Duracion: ${document.getElementById("timet").textContent}`);
 }
 
-  function arrancar()
+function arrancar()
   {
 	  // Limpiar reporte anterior
 	  clearReport();
