@@ -1,0 +1,54 @@
+# admin_add.html
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>TNSSIM · Añadir jugador</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <main class="admin-container">
+    <h1>Añadir jugador</h1>
+
+    <form id="addPlayerForm" class="admin-form">
+      <label>
+        Nombre:
+        <input type="text" id="nombre" required />
+      </label>
+
+      <label>
+        País:
+        <input type="text" id="pais" required />
+      </label>
+
+      <label>
+        Habilidad:
+        <input type="number" id="skill" min="1" max="100" required />
+      </label>
+
+      <label>
+        Saque:
+        <input type="number" id="saque" min="1" max="100" required />
+      </label>
+
+      <label>
+        Resto:
+        <input type="number" id="resto" min="1" max="100" required />
+      </label>
+
+      <button type="submit">Añadir jugador</button>
+    </form>
+
+    <section class="admin-actions">
+      <button id="downloadJson">Descargar jugadores.json</button>
+      <a href="admin.html">⬅ Volver al panel</a>
+    </section>
+
+    <pre id="debug"></pre>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
