@@ -12,6 +12,7 @@
       "service": 5,
       "power": 5,
       "resto": 4,
+	  "consistencia": 4,
       "form": 5,
       "surface": "hardcourt"
     },
@@ -27,6 +28,7 @@
       "service": 7,
       "power": 8,
       "resto": 9,
+	  "consistencia": 4,
       "form": 1,
       "surface": "hardcourt"
     }

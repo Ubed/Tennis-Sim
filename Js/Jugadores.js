@@ -116,18 +116,18 @@ function inicializarJugadoresLegacy() {
 	  
 	  // También mostrar qué valor tendría cada campo (incluso si no existen)
 	  console.log("\nValores que se intentarán asignar:");
-	  console.log("Posición 1 (forehand):", jugadorData[01]);
-	  console.log("Posición 2 (backhand):", jugadorData[1]);
-	  console.log("Posición 3 (volley):", jugadorData[2]);
-	  console.log("Posición 4 (dropshot):", jugadorData[3]);
-	  console.log("Posición 5 (speed):", jugadorData[4]);
-	  console.log("Posición 6 (stamina):", jugadorData[5]);
-	  console.log("Posición 7 (service):", jugadorData[6]);
-	  console.log("Posición 8 (power):", jugadorData[7]);
-	  console.log("Posición 9 (resto):", jugadorData[8]);
-	  console.log("Posición 10 (consistencia):", jugadorData[9]);
-	  console.log("Posición 11 (form):", jugadorData[10]);
-	  console.log("Posición 12 (surface):", jugadorData[11]);
+	  console.log("Posición 1 (forehand):", jugadorData[1]);
+	  console.log("Posición 2 (backhand):", jugadorData[2]);
+	  console.log("Posición 3 (volley):", jugadorData[3]);
+	  console.log("Posición 4 (dropshot):", jugadorData[4]);
+	  console.log("Posición 5 (speed):", jugadorData[5]);
+	  console.log("Posición 6 (stamina):", jugadorData[6]);
+	  console.log("Posición 7 (service):", jugadorData[7]);
+	  console.log("Posición 8 (power):", jugadorData[8]);
+	  console.log("Posición 9 (resto):", jugadorData[9]);
+	  console.log("Posición 10 (consistencia):", jugadorData[10]);
+	  console.log("Posición 11 (form):", jugadorData[11]);
+	  console.log("Posición 12 (surface):", jugadorData[12]);
 	  console.log("=== FIN DEPURACIÓN ===\n");
   
 	  var comboForehand=document.getElementById("forehand" + num);
