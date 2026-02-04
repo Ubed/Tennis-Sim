@@ -10,6 +10,7 @@ function jugadorJSONaLegacy(j) {
     j.service,
     j.power,
     j.resto,
+	j.consistencia,
     j.form,
     j.surface
   ];
