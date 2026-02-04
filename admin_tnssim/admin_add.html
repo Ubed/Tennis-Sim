@@ -2,67 +2,107 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>TNS Sim · Añadir jugador</title>
+  <title>Admin · Añadir jugador</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="stylesheet" href="admin.css" />
+  <script src="admin.js" defer></script>
 </head>
-<body>
 
-<main class="admin-container">
-  <h1>🎾 Añadir jugador</h1>
+<body class="admin-body">
 
-  <form id="addPlayerForm" class="admin-form">
+  <main class="admin-card">
+    <h1>🎾 Añadir jugador</h1>
 
-    <!-- GENERO -->
-    <div class="form-group">
-      <label>Género</label>
-      <select id="genero" required>
-        <option value="hombres">Hombres</option>
-        <option value="mujeres">Mujeres</option>
-      </select>
-    </div>
+    <form id="addPlayerForm" class="admin-form">
 
-    <!-- DATOS BASICOS -->
-    <div class="form-group">
-      <label>Nombre completo</label>
-      <input type="text" id="nombre" required />
-    </div>
+      <div class="form-group">
+        <label>Género</label>
+        <select id="genero" required>
+          <option value="hombres">Hombres</option>
+          <option value="mujeres">Mujeres</option>
+        </select>
+      </div>
 
-    <div class="form-group">
-      <label>Surface favorita</label>
-      <select id="surface">
-        <option value="hardcourt">Hardcourt</option>
-        <option value="clay">Clay</option>
-        <option value="grass">Grass</option>
-      </select>
-    </div>
+      <div class="form-group">
+        <label>Nombre completo</label>
+        <input id="nombre" type="text" required />
+      </div>
 
-    <!-- STATS -->
-    <h3>Stats (1–5)</h3>
+      <div class="form-group">
+        <label>Superficie favorita</label>
+        <select id="surface">
+          <option value="hardcourt">Hardcourt</option>
+          <option value="clay">Tierra</option>
+          <option value="grass">Hierba</option>
+          <option value="allcourt">Neutral</option>
+        </select>
+      </div>
 
-    <div class="form-grid">
-      <input type="number" id="forehand" min="1" max="5" placeholder="Forehand" required>
-      <input type="number" id="backhand" min="1" max="5" placeholder="Backhand" required>
-      <input type="number" id="volley" min="1" max="5" placeholder="Volley" required>
-      <input type="number" id="dropshot" min="1" max="5" placeholder="Dropshot" required>
-      <input type="number" id="speed" min="1" max="5" placeholder="Speed" required>
-      <input type="number" id="stamina" min="1" max="5" placeholder="Stamina" required>
-      <input type="number" id="service" min="1" max="5" placeholder="Service" required>
-      <input type="number" id="power" min="1" max="5" placeholder="Power" required>
-      <input type="number" id="resto" min="1" max="5" placeholder="Resto" required>
-      <input type="number" id="form" min="1" max="5" placeholder="Form" required>
-    </div>
+      <h2>Stats (1–5)</h2>
 
-    <button type="submit" class="btn primary">➕ Añadir jugador</button>
-  </form>
+<div class="stats-grid-2">
+  <div class="stat">
+    <label for="forehand">Forehand</label>
+    <input id="forehand" type="number" min="1" max="5" value="3">
+  </div>
 
-  <button id="downloadJson" class="btn secondary">
-    💾 Descargar jugadores.json
-  </button>
+  <div class="stat">
+    <label for="backhand">Backhand</label>
+    <input id="backhand" type="number" min="1" max="5" value="3">
+  </div>
 
-  <pre id="debug"></pre>
-</main>
+  <div class="stat">
+    <label for="volley">Volley</label>
+    <input id="volley" type="number" min="1" max="5" value="3">
+  </div>
 
-<script src="admin.js"></script>
+  <div class="stat">
+    <label for="dropshot">Dropshot</label>
+    <input id="dropshot" type="number" min="1" max="5" value="3">
+  </div>
+
+  <div class="stat">
+    <label for="speed">Speed</label>
+    <input id="speed" type="number" min="1" max="5" value="3">
+  </div>
+
+  <div class="stat">
+    <label for="stamina">Stamina</label>
+    <input id="stamina" type="number" min="1" max="5" value="3">
+  </div>
+
+  <div class="stat">
+    <label for="service">Service</label>
+    <input id="service" type="number" min="1" max="5" value="3">
+  </div>
+
+  <div class="stat">
+    <label for="power">Power</label>
+    <input id="power" type="number" min="1" max="5" value="3">
+  </div>
+
+  <div class="stat">
+    <label for="resto">Resto</label>
+    <input id="resto" type="number" min="1" max="5" value="3">
+  </div>
+
+  <div class="stat">
+    <label for="form">Forma</label>
+    <input id="form" type="number" min="1" max="5" value="3">
+  </div>
+</div>
+
+
+      <button type="submit" class="btn-primary">➕ Añadir jugador</button>
+    </form>
+
+    <button id="downloadJson" class="btn-secondary">
+      ⬇ Descargar jugadores.json
+    </button>
+
+    <pre id="debug" class="debug-box"></pre>
+  </main>
+
 </body>
 </html>
