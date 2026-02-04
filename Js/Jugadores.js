@@ -86,12 +86,50 @@ function inicializarJugadoresLegacy() {
   });
 }
 
-  /*function cargarCaracteristicas(num){
+  function cargarCaracteristicas(num){
 	  if (!jugadores.length) {
 		console.warn("Jugadores aún no cargados");
 		return;
 	  }
 	  var combo=document.getElementById("jugador" + num);
+	  
+	  // Mostrar información de depuración
+	  console.log("=== DEPURACIÓN cargarCaracteristicas(" + num + ") ===");
+	  console.log("Valor seleccionado en combo:", combo.value);
+	  console.log("Total de jugadores en array:", jugadores.length);
+	  
+	  // Verificar si el índice existe
+	  if (!jugadores[combo.value]) {
+		console.error("ERROR: No existe jugadores[" + combo.value + "]");
+		console.log("Índices disponibles: 0 a " + (jugadores.length - 1));
+		return;
+	  }
+	  
+	  var jugadorData = jugadores[combo.value];
+	  console.log("Datos del jugador seleccionado:", jugadorData);
+	  console.log("Longitud del array del jugador:", jugadorData.length);
+	  
+	  // Mostrar cada posición individualmente
+	  for (var i = 0; i < jugadorData.length; i++) {
+		console.log("jugadores[" + combo.value + "][" + i + "] =", jugadorData[i], "(tipo:", typeof jugadorData[i] + ")");
+	  }
+	  
+	  // También mostrar qué valor tendría cada campo (incluso si no existen)
+	  console.log("\nValores que se intentarán asignar:");
+	  console.log("Posición 1 (forehand):", jugadorData[1]);
+	  console.log("Posición 2 (backhand):", jugadorData[2]);
+	  console.log("Posición 3 (volley):", jugadorData[3]);
+	  console.log("Posición 4 (dropshot):", jugadorData[4]);
+	  console.log("Posición 5 (speed):", jugadorData[5]);
+	  console.log("Posición 6 (stamina):", jugadorData[6]);
+	  console.log("Posición 7 (service):", jugadorData[7]);
+	  console.log("Posición 8 (power):", jugadorData[8]);
+	  console.log("Posición 9 (resto):", jugadorData[9]);
+	  console.log("Posición 10 (consistencia):", jugadorData[10]);
+	  console.log("Posición 11 (form):", jugadorData[11]);
+	  console.log("Posición 12 (surface):", jugadorData[12]);
+	  console.log("=== FIN DEPURACIÓN ===\n");
+  
 	  var comboForehand=document.getElementById("forehand" + num);
 	  var comboBackhand=document.getElementById("backhand" + num);
 	  var comboVolley=document.getElementById("volley" + num);
@@ -117,61 +155,21 @@ function inicializarJugadoresLegacy() {
 	  comboConsi.value=jugadores[combo.value][10];
 	  comboForm.value=jugadores[combo.value][11];
 	  comboSurface.value=jugadores[combo.value][12];
-  }*/
-  
-  function cargarCaracteristicas(num) {
-  // Validaciones iniciales
-	  if (!jugadores || !Array.isArray(jugadores) || jugadores.length === 0) {
-		console.warn("Jugadores aún no cargados o no es un array válido");
-		return;
-	  }
-	  
-	  var combo = document.getElementById("jugador" + num);
-	  if (!combo) {
-		console.error("No se encontró el combo para jugador" + num);
-		return;
-	  }
-	  
-	  var jugadorIndex = parseInt(combo.value);
-	  
-	  // Validar que el índice sea válido
-	  if (isNaN(jugadorIndex) || jugadorIndex < 0 || jugadorIndex >= jugadores.length) {
-		console.error("Índice de jugador inválido:", jugadorIndex);
-		return;
-	  }
-	  
-	  var jugador = jugadores[jugadorIndex];
-	  if (!jugador || !Array.isArray(jugador)) {
-		console.error("Datos del jugador inválidos en el índice:", jugadorIndex);
-		return;
-	  }
-	  
-	  // Mapeo de campos para mayor claridad
-	  var campos = [
-		{ id: "forehand", index: 1 },
-		{ id: "backhand", index: 2 },
-		{ id: "volley", index: 3 },
-		{ id: "dropshot", index: 4 },
-		{ id: "speed", index: 5 },
-		{ id: "stamina", index: 6 },
-		{ id: "service", index: 7 },
-		{ id: "power", index: 8 },
-		{ id: "resto", index: 9 },
-		{ id: "consistencia", index: 10 },
-		{ id: "form", index: 11 },
-		{ id: "surface", index: 12 }
-	  ];
-	  
-	  // Asignar valores a todos los campos
-	  campos.forEach(function(campo) {
-		var elemento = document.getElementById(campo.id + num);
-		if (elemento && jugador[campo.index] !== undefined) {
-		  elemento.value = jugador[campo.index];
-		} else if (elemento) {
-		  elemento.value = '';
-		}
-	  });
-	}
+	  // También mostrar qué se asignó realmente a cada campo
+	  console.log("Valores asignados a los campos:");
+	  console.log("forehand" + num + ":", comboForehand.value);
+	  console.log("backhand" + num + ":", comboBackhand.value);
+	  console.log("volley" + num + ":", comboVolley.value);
+	  console.log("dropshot" + num + ":", comboDropshot.value);
+	  console.log("speed" + num + ":", comboSpeed.value);
+	  console.log("stamina" + num + ":", comboStamina.value);
+	  console.log("service" + num + ":", comboService.value);
+	  console.log("power" + num + ":", comboPower.value);
+	  console.log("resto" + num + ":", comboResto.value);
+	  console.log("consistencia" + num + ":", comboConsi.value);
+	  console.log("form" + num + ":", comboForm.value);
+	  console.log("surface" + num + ":", comboSurface.value);
+  }
   
   function compara(a, b) {
     return (a[0]<b[0]?"-1":"1");
