@@ -214,17 +214,37 @@ function finalizarPartido(ganador, perdedor, resultado) {
 
 function getSelectValue(id) {
   const sel = document.getElementById(id);
-  if (!sel || sel.selectedIndex === -1) {
-    throw new Error("Select inválido o sin selección: " + id);
+
+  if (!sel) {
+    throw new Error("No existe el select: " + id);
   }
+
+  if (sel.options.length === 0) {
+    throw new Error("El select no tiene opciones: " + id);
+  }
+
+  if (sel.selectedIndex === -1) {
+    throw new Error("No hay opción seleccionada en: " + id);
+  }
+
   return sel.options[sel.selectedIndex].value;
 }
 
 function getSelectText(id) {
   const sel = document.getElementById(id);
-  if (!sel || sel.selectedIndex === -1) {
-    throw new Error("Select inválido o sin selección: " + id);
+
+  if (!sel) {
+    throw new Error("No existe el select: " + id);
   }
+
+  if (sel.options.length === 0) {
+    throw new Error("El select no tiene opciones: " + id);
+  }
+
+  if (sel.selectedIndex === -1) {
+    throw new Error("No hay opción seleccionada en: " + id);
+  }
+
   return sel.options[sel.selectedIndex].text;
 }
 
@@ -235,10 +255,10 @@ function arrancar()
 	  
 	  // Agregar primera linea al reporte
 	  addToReport("=== PARTIDO INICIADO ===");
-	  /*surf1=document.getElementById("surface1").options[document.getElementById("surface1").selectedIndex].value;
-	  surf2=document.getElementById("surface2").options[document.getElementById("surface2").selectedIndex].value;
-	  nomb1=document.getElementById("jugador1").options[document.getElementById("jugador1").selectedIndex].text;
-	  nomb2=document.getElementById("jugador2").options[document.getElementById("jugador2").selectedIndex].text;*/
+	  //surf1=document.getElementById("surface1").options[document.getElementById("surface1").selectedIndex].value;
+	  //surf2=document.getElementById("surface2").options[document.getElementById("surface2").selectedIndex].value;
+	  //nomb1=document.getElementById("jugador1").options[document.getElementById("jugador1").selectedIndex].text;
+	  //nomb2=document.getElementById("jugador2").options[document.getElementById("jugador2").selectedIndex].text;
 	  try {
 	    surf1 = getSelectValue("surface1");
 	    surf2 = getSelectValue("surface2");
