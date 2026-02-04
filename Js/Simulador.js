@@ -212,6 +212,22 @@ function finalizarPartido(ganador, perdedor, resultado) {
   addToReport(`Duracion: ${document.getElementById("timet").textContent}`);
 }
 
+function getSelectValue(id) {
+  const sel = document.getElementById(id);
+  if (!sel || sel.selectedIndex === -1) {
+    throw new Error("Select inválido o sin selección: " + id);
+  }
+  return sel.options[sel.selectedIndex].value;
+}
+
+function getSelectText(id) {
+  const sel = document.getElementById(id);
+  if (!sel || sel.selectedIndex === -1) {
+    throw new Error("Select inválido o sin selección: " + id);
+  }
+  return sel.options[sel.selectedIndex].text;
+}
+
 function arrancar()
   {
 	  // Limpiar reporte anterior
@@ -219,10 +235,20 @@ function arrancar()
 	  
 	  // Agregar primera linea al reporte
 	  addToReport("=== PARTIDO INICIADO ===");
-	  surf1=document.getElementById("surface1").options[document.getElementById("surface1").selectedIndex].value;
+	  /*surf1=document.getElementById("surface1").options[document.getElementById("surface1").selectedIndex].value;
 	  surf2=document.getElementById("surface2").options[document.getElementById("surface2").selectedIndex].value;
 	  nomb1=document.getElementById("jugador1").options[document.getElementById("jugador1").selectedIndex].text;
-	  nomb2=document.getElementById("jugador2").options[document.getElementById("jugador2").selectedIndex].text;
+	  nomb2=document.getElementById("jugador2").options[document.getElementById("jugador2").selectedIndex].text;*/
+	  try {
+	    surf1 = getSelectValue("surface1");
+	    surf2 = getSelectValue("surface2");
+	    nomb1 = getSelectText("jugador1");
+	    nomb2 = getSelectText("jugador2");
+	  } catch (e) {
+	    alert("?? Debes seleccionar jugadores y superficies antes de iniciar el partido");
+	    console.error(e.message);
+	    return;
+	  }
 	  fore1=parseInt(document.getElementById("forehand1").options[document.getElementById("forehand1").selectedIndex].value);
 	  fore2=parseInt(document.getElementById("forehand2").options[document.getElementById("forehand2").selectedIndex].value);
 	  back1=parseInt(document.getElementById("backhand1").options[document.getElementById("backhand1").selectedIndex].value);
