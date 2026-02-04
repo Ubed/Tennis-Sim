@@ -86,7 +86,7 @@ function inicializarJugadoresLegacy() {
   });
 }
 
-  function cargarCaracteristicas(num){
+  /*function cargarCaracteristicas(num){
 	  if (!jugadores.length) {
 		console.warn("Jugadores aún no cargados");
 		return;
@@ -117,7 +117,61 @@ function inicializarJugadoresLegacy() {
 	  comboConsi.value=jugadores[combo.value][10];
 	  comboForm.value=jugadores[combo.value][11];
 	  comboSurface.value=jugadores[combo.value][12];
-  }
+  }*/
+  
+  function cargarCaracteristicas(num) {
+  // Validaciones iniciales
+	  if (!jugadores || !Array.isArray(jugadores) || jugadores.length === 0) {
+		console.warn("Jugadores aún no cargados o no es un array válido");
+		return;
+	  }
+	  
+	  var combo = document.getElementById("jugador" + num);
+	  if (!combo) {
+		console.error("No se encontró el combo para jugador" + num);
+		return;
+	  }
+	  
+	  var jugadorIndex = parseInt(combo.value);
+	  
+	  // Validar que el índice sea válido
+	  if (isNaN(jugadorIndex) || jugadorIndex < 0 || jugadorIndex >= jugadores.length) {
+		console.error("Índice de jugador inválido:", jugadorIndex);
+		return;
+	  }
+	  
+	  var jugador = jugadores[jugadorIndex];
+	  if (!jugador || !Array.isArray(jugador)) {
+		console.error("Datos del jugador inválidos en el índice:", jugadorIndex);
+		return;
+	  }
+	  
+	  // Mapeo de campos para mayor claridad
+	  var campos = [
+		{ id: "forehand", index: 1 },
+		{ id: "backhand", index: 2 },
+		{ id: "volley", index: 3 },
+		{ id: "dropshot", index: 4 },
+		{ id: "speed", index: 5 },
+		{ id: "stamina", index: 6 },
+		{ id: "service", index: 7 },
+		{ id: "power", index: 8 },
+		{ id: "resto", index: 9 },
+		{ id: "consistencia", index: 10 },
+		{ id: "form", index: 11 },
+		{ id: "surface", index: 12 }
+	  ];
+	  
+	  // Asignar valores a todos los campos
+	  campos.forEach(function(campo) {
+		var elemento = document.getElementById(campo.id + num);
+		if (elemento && jugador[campo.index] !== undefined) {
+		  elemento.value = jugador[campo.index];
+		} else if (elemento) {
+		  elemento.value = '';
+		}
+	  });
+	}
   
   function compara(a, b) {
     return (a[0]<b[0]?"-1":"1");
