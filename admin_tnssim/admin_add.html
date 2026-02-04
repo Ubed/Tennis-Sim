@@ -1,54 +1,68 @@
-# admin_add.html
-
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>TNSSIM · Añadir jugador</title>
+  <title>TNS Sim · Añadir jugador</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="admin.css" />
 </head>
 <body>
-  <main class="admin-container">
-    <h1>Añadir jugador</h1>
 
-    <form id="addPlayerForm" class="admin-form">
-      <label>
-        Nombre:
-        <input type="text" id="nombre" required />
-      </label>
+<main class="admin-container">
+  <h1>🎾 Añadir jugador</h1>
 
-      <label>
-        País:
-        <input type="text" id="pais" required />
-      </label>
+  <form id="addPlayerForm" class="admin-form">
 
-      <label>
-        Habilidad:
-        <input type="number" id="skill" min="1" max="100" required />
-      </label>
+    <!-- GENERO -->
+    <div class="form-group">
+      <label>Género</label>
+      <select id="genero" required>
+        <option value="hombres">Hombres</option>
+        <option value="mujeres">Mujeres</option>
+      </select>
+    </div>
 
-      <label>
-        Saque:
-        <input type="number" id="saque" min="1" max="100" required />
-      </label>
+    <!-- DATOS BASICOS -->
+    <div class="form-group">
+      <label>Nombre completo</label>
+      <input type="text" id="nombre" required />
+    </div>
 
-      <label>
-        Resto:
-        <input type="number" id="resto" min="1" max="100" required />
-      </label>
+    <div class="form-group">
+      <label>Surface favorita</label>
+      <select id="surface">
+        <option value="hardcourt">Hardcourt</option>
+        <option value="clay">Clay</option>
+        <option value="grass">Grass</option>
+      </select>
+    </div>
 
-      <button type="submit">Añadir jugador</button>
-    </form>
+    <!-- STATS -->
+    <h3>Stats (1–5)</h3>
 
-    <section class="admin-actions">
-      <button id="downloadJson">Descargar jugadores.json</button>
-      <a href="admin.html">⬅ Volver al panel</a>
-    </section>
+    <div class="form-grid">
+      <input type="number" id="forehand" min="1" max="5" placeholder="Forehand" required>
+      <input type="number" id="backhand" min="1" max="5" placeholder="Backhand" required>
+      <input type="number" id="volley" min="1" max="5" placeholder="Volley" required>
+      <input type="number" id="dropshot" min="1" max="5" placeholder="Dropshot" required>
+      <input type="number" id="speed" min="1" max="5" placeholder="Speed" required>
+      <input type="number" id="stamina" min="1" max="5" placeholder="Stamina" required>
+      <input type="number" id="service" min="1" max="5" placeholder="Service" required>
+      <input type="number" id="power" min="1" max="5" placeholder="Power" required>
+      <input type="number" id="resto" min="1" max="5" placeholder="Resto" required>
+      <input type="number" id="form" min="1" max="5" placeholder="Form" required>
+    </div>
 
-    <pre id="debug"></pre>
-  </main>
+    <button type="submit" class="btn primary">➕ Añadir jugador</button>
+  </form>
 
-  <script src="admin.js"></script>
+  <button id="downloadJson" class="btn secondary">
+    💾 Descargar jugadores.json
+  </button>
+
+  <pre id="debug"></pre>
+</main>
+
+<script src="admin.js"></script>
 </body>
 </html>
